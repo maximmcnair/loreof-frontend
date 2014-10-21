@@ -38,7 +38,12 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('./build/'))
 })
 
-gulp.task('watch', function() {
+gulp.task('images', function () {
+  gulp.src('./images/**/*.*', { base: './' })
+    .pipe(gulp.dest('./build/'))
+})
+
+gulp.task('watch', function () {
   gulp.watch(defaultPaths.stylus, ['stylus'])
   gulp.watch(defaultPaths.jade, ['jade'])
 })
@@ -51,5 +56,5 @@ gulp.task('server', function () {
   })
 })
 
-gulp.task('default', ['stylus', 'jade', 'server', 'watch'])
-gulp.task('build', ['stylus', 'jade'])
+gulp.task('default', ['stylus', 'jade', 'images', 'server', 'watch'])
+gulp.task('build', ['stylus', 'jade', 'images'])
