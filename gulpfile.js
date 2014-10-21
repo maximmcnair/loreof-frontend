@@ -7,13 +7,17 @@ var gulp = require('gulp')
   , connect = require('gulp-connect')
   , path = require('path')
 
-var defaultPaths = {
-  stylus: [
-    './stylus/**/**/*.styl'
-  , './stylus/**/*.styl'
-  , './stylus/*.styl'
-  ]
-}
+var defaultPaths =
+  { stylus:
+    [ './stylus/**/**/*.styl'
+    , './stylus/**/*.styl'
+    , './stylus/*.styl'
+    ]
+  , jade:
+    [ './jade/*.jade'
+    , './jade/**/*.jade'
+    ]
+  }
 
 gulp.task('stylus', function () {
   gulp.src('./stylus/style.styl')
@@ -36,6 +40,7 @@ gulp.task('jade', function () {
 
 gulp.task('watch', function() {
   gulp.watch(defaultPaths.stylus, ['stylus'])
+  gulp.watch(defaultPaths.jade, ['jade'])
 })
 
 gulp.task('server', function () {
