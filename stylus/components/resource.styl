@@ -1,80 +1,71 @@
-.resourcePreview
-  margin-bottom 25px
-  border-radius 3px
-  background #ffffff
-  position relative
+.resource-video-wrapper
+  background #1b1f23
   clearfix()
-  overflow hidden
 
-.resourcePreview-title
-  font-size 23px
-  line-height 30px
-  color #292f39
-  overflow hidden
-  white-space nowrap
-  overflow hidden
-  text-overflow ellipsis
-
-.resourcePreview-img
+.resource-video
+  max-width 640px
+  margin 0 auto
   position relative
-  img
+
+.resource-embed
+  position relative
+  padding-bottom 56.25%
+  height 0
+  overflow hidden
+  max-width 100%
+  height auto
+
+  iframe
+  object
+  embed
+    position absolute
+    top 0
+    left 0
     width 100%
-    height auto
+    height 100%
 
-.resourcePreview-label
-  position absolute
-  bottom 17px
-  left 10px
+.resource-vote
+  padding 10px 0px
+  text-align right
+  span
+    font-size 13px
+    color #f7f7f7
+    font-family $secondaryTypeface
+    font-style italic
+    display inline
+    margin-bottom 10px
+    margin-right 10px
+  .btn
+    background #557cd2
+    color #f7f7f7
+    font-size 14px
+    font-weight 600
+    border none
+    font-style normal
+    border-radius 5px
+    font-family $secondaryTypeface
 
-.resourcePreview-desc
-  padding 10px
+@media screen and (max-width: 650px)
+  .resource-vote
+    margin-right 10px
 
-// uploaded
-.resourcePreview-uploaded
-  clearfix()
+@media screen and (min-width: 960px)
+  .resource-vote
+    text-align left
+    position absolute
+    bottom 10px
+    right 0px
+    transform translate3d(100%, 0, 0)
+    padding 0px 0px 0px 10px
+    span
+      display block
+      margin-right 0px
 
-.resourcePreview-uploaded-img
-  float left
-  margin-right 10px
-  border-radius 50%
-  overflow hidden
-  height 43px
-  width 43px
 
-.resourcePreview-uploaded-user-title
-  margin-top 7px
-  color #b2b0b1
-  font-family $secondaryTypeface
-  font-size 12px
-  font-weight 800
-  text-transform uppercase
+.resource-title
+  text-align left
+  font-size 39px
+  margin 25px 0px 10px 0px
 
-.resourcePreview-uploaded-user-username
-  color #747273
-  font-family $sprimaryTypeface
-  font-style italic
-  font-size 16px
-  font-weight 500
-  margin-top 5px
-
-.resourcePreview-votes
-  color #aab4b5
-  position absolute
-  bottom 15px
-  right 15px
-
-@media screen and (min-width: 500px) and (max-width: 750px)
-  .resourcePreview
-    width responsive(300, 620px)
-    float left
-    margin-right responsive(20, 620px)
-    &:nth-of-type(2n)
-      margin-right 0%
-
-@media screen and (min-width: 750px)
-  .resourcePreview
-    width responsive(300, 940)
-    float left
-    margin-right responsive(20, 940)
-    &:nth-of-type(3n)
-      margin-right 0%
+.resource-desc
+  margin 15px 0px 15px 0px

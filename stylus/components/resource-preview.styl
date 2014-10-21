@@ -1,0 +1,80 @@
+.resourcePreview
+  margin-bottom 25px
+  border-radius 3px
+  background #ffffff
+  position relative
+  clearfix()
+  overflow hidden
+
+.resourcePreview-title
+  font-size 23px
+  line-height 30px
+  color #292f39
+  overflow hidden
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.resourcePreview-img
+  position relative
+  img
+    width 100%
+    height auto
+
+.resourcePreview-label
+  position absolute
+  bottom 17px
+  left 10px
+
+.resourcePreview-desc
+  padding 10px
+
+// uploaded
+.resourcePreview-uploaded
+  clearfix()
+
+.resourcePreview-uploaded-img
+  float left
+  margin-right 10px
+  border-radius 50%
+  overflow hidden
+  height 43px
+  width 43px
+
+.resourcePreview-uploaded-user-title
+  margin-top 7px
+  color #b2b0b1
+  font-family $secondaryTypeface
+  font-size 12px
+  font-weight 800
+  text-transform uppercase
+
+.resourcePreview-uploaded-user-username
+  color #747273
+  font-family $sprimaryTypeface
+  font-style italic
+  font-size 16px
+  font-weight 500
+  margin-top 5px
+
+.resourcePreview-votes
+  color #aab4b5
+  position absolute
+  bottom 15px
+  right 15px
+
+@media screen and (min-width: 500px) and (max-width: 750px)
+  .resourcePreview
+    width responsive(300, 620px)
+    float left
+    margin-right responsive(20, 620px)
+    &:nth-of-type(2n)
+      margin-right 0%
+
+@media screen and (min-width: 750px)
+  .resourcePreview
+    width responsive(300, 940)
+    float left
+    margin-right responsive(20, 940)
+    &:nth-of-type(3n)
+      margin-right 0%
