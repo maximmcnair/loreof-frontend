@@ -4,6 +4,7 @@ var gulp = require('gulp')
   , nib = require('nib')
   , jade = require('gulp-jade')
   , rename = require('gulp-rename')
+  , connect = require('gulp-connect')
   , path = require('path')
 
 var defaultPaths = {
@@ -37,5 +38,13 @@ gulp.task('watch', function() {
   gulp.watch(defaultPaths.stylus, ['stylus'])
 })
 
-gulp.task('default', ['stylus', 'jade', 'watch'])
+gulp.task('server', function () {
+  connect.server({
+    root: './build/'
+  , host: '*'
+  , port: '5230'
+  })
+})
+
+gulp.task('default', ['stylus', 'jade', 'server', 'watch'])
 gulp.task('build', ['stylus', 'jade'])
