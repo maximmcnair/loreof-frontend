@@ -27,17 +27,15 @@ gulp.task('stylus', function () {
 })
 
 gulp.task('jade', function () {
-  var inputPath = path.resolve('./interstitials/interstitials/' + interstitial.name + '/jade/index.jade')
-    , outputPath = path.resolve('./interstitials/build/' + interstitial.name)
-
-  gulp.src(inputPath)
+  gulp.src('./jade/layout.jade')
     .pipe(jade())
-    .pipe(gulp.dest(outputPath))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('./build/'))
 })
 
 gulp.task('watch', function() {
   gulp.watch(defaultPaths.stylus, ['stylus'])
 })
 
-gulp.task('default', ['stylus', 'watch'])
-gulp.task('build', ['stylus'])
+gulp.task('default', ['stylus', 'jade', 'watch'])
+gulp.task('build', ['stylus', 'jade'])
