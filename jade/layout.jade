@@ -11,8 +11,28 @@ html(ng-app="kaboo")
     script.
       try{Typekit.load();}catch(e){}
 
+    //- <!-- Twitter Meta -->
+    //- <meta name="twitter:card" value="summary">
+    //- <meta name="twitter:site" value="@fosterscatering">
+    //- <meta name="twitter:title" content="Fosters">
+    //- <meta name="twitter:description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
+    //- <meta name="twitter:image" content="http://fostersevents.co.uk/wp-content/uploads/2014/01/fb_img.jpg">
+
+    //- <!-- Facebook Meta -->
+    //- <meta property="og:type" content="website">
+    //- <meta property="og:title" content="Fosters">
+    //- <meta property="og:description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
+    //- <meta property="og:url" content="http://fostersevents.co.uk/">
+    //- <meta property="og:image" content="http://fostersevents.co.uk/wp-content/uploads/2014/01/fb_img.jpg">
+
+    //- <!-- Google Meta -->
+    //- <meta name="description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
+    //- <meta name="author" content="Fosters Events">
+    //- <meta name="robots" content="all">
+
     base(href="/")
   body
     include components/header
 
     div.ng-view
+      include partials/home
