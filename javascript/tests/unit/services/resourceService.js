@@ -30,14 +30,10 @@ describe('Unit: $resourceService', function () {
 
     promise.then(function(data){
       resources = data
-      // console.log('data', data)
-      // console.log('resources a', resources)
     })
-    // console.log('resources', resources)
 
     // flush response
     $httpBackend.flush()
-    // console.log('resources', resources)
 
     // should be an array
     expect(resources instanceof Array).toBeTruthy()
