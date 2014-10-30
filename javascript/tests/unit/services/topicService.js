@@ -1,8 +1,8 @@
 /*
- * $topicServie tests
+ * $topicService tests
  */
 
-describe('Unit: $topicServie', function () {
+describe('Unit: $topicService', function () {
   beforeEach(angular.mock.module('loreof'))
 
   var service
