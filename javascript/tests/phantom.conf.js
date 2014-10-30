@@ -12,6 +12,7 @@ module.exports = function(config) {
     , '../lib/angular-route.js'
     // Fixtures
     , './fixtures/topicFixtures.js'
+    , './fixtures/resourceFixtures.js'
     // Application
     , '../app/app.js'
     // Controllers
@@ -20,6 +21,8 @@ module.exports = function(config) {
     // Services
     , '../app/services/topicService.js'
     , './unit/services/topicService.js'
+    , '../app/services/resourceService.js'
+    , './unit/services/resourceService.js'
   ])
 
   config.set(conf)
