@@ -19,19 +19,7 @@ var defaultPaths =
     [ './jade/*.jade'
     , './jade/**/*.jade'
     ]
-  , js:
-    { plugins:
-      [ './javascript/lib/angular.js'
-      , './javascript/lib/angular-animate.js'
-      , './javascript/lib/angular-route.js'
-      ]
-    , app:
-      [ './javascript/app/app.js'
-      ]
-    // , tests:
-    //   [ './javascript/tests/'
-    //   ]
-    }
+  , js: require('./scripts')
   }
 
 gulp.task('stylus', function () {
