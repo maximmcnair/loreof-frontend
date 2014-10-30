@@ -1,4 +1,8 @@
-describe('Unit: topicService', function () {
+/*
+ * $topicServie tests
+ */
+
+describe('Unit: $topicServie', function () {
   beforeEach(angular.mock.module('loreof'))
 
   var service
@@ -17,7 +21,7 @@ describe('Unit: topicService', function () {
     expect(service.getTopics()).toBeDefined()
   })
 
-  it('should return all topics', function() {
+  it('should resolve to an array of topics', function() {
     // mock /api/v1/topic with fixture
     $httpBackend.whenGET('/api/v1/topic').respond(topicFixture)
 
@@ -27,14 +31,19 @@ describe('Unit: topicService', function () {
     promise.then(function(data){
       topics = data
       // console.log('data', data)
-      // console.log('topics a', data)
+      // console.log('topics a', topics)
     })
     // console.log('topics', topics)
 
     // flush response
     $httpBackend.flush()
     // console.log('topics', topics)
+
+    // should be an array
     expect(topics instanceof Array).toBeTruthy()
+    // should match fixture
     expect(topics).toEqual(topicFixture)
   })
+
+  it('should reject the promise and respond with error')
 })
