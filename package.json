@@ -13,11 +13,9 @@
     "gulp-rename": "~1.2.0",
     "gulp-jade": "^0.9.0",
     "karma": "~0.12.24",
+    "karma-jasmine": "~0.2.2",
     "karma-phantomjs-launcher": "~0.1.4",
-    "karma-chrome-launcher": "~0.1.5",
-    "karma-mocha": "~0.1.9",
-    "karma-chai": "~0.1.0",
-    "karma-sinon": "~1.0.3"
+    "karma-chrome-launcher": "~0.1.5"
   },
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",

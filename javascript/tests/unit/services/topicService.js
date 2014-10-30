@@ -1,16 +1,40 @@
-var expect = chai.expect
-
 describe('Unit: topicService', function () {
   beforeEach(angular.mock.module('loreof'))
 
-  it('should exist', inject(function($topicService) {
-    expect($topicService).not.to.equal(null)
+  var service
+    , $httpBackend
+
+  beforeEach(inject(function ($topicService, _$httpBackend_) {
+    service = $topicService
+    $httpBackend = _$httpBackend_
   }))
 
-  it('should return all topics', inject(function($topicService) {
-    var firstServiceTopic = $topicService.allTopics[0]
-      , firstFixtureTopic = topicFixture[0]
+  it('should exist', function () {
+    expect(service).toBeDefined()
+  })
 
-    expect(firstFixtureTopic.title).to.equal(firstServiceTopic.title)
-  }))
+  it('should have a getTopics()', function () {
+    expect(service.getTopics()).toBeDefined()
+  })
+
+  it('should return all topics', function() {
+    // mock /api/v1/topic with fixture
+    $httpBackend.whenGET('/api/v1/topic').respond(topicFixture)
+
+    var promise = service.getTopics()
+      , topics = null
+
+    promise.then(function(data){
+      topics = data
+      // console.log('data', data)
+      // console.log('topics a', data)
+    })
+    // console.log('topics', topics)
+
+    // flush response
+    $httpBackend.flush()
+    // console.log('topics', topics)
+    expect(topics instanceof Array).toBeTruthy()
+    expect(topics).toEqual(topicFixture)
+  })
 })

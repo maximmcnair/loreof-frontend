@@ -2,8 +2,7 @@ module.exports = function() {
   return {
     basePath: ''
   , frameworks:
-    [ 'mocha'
-    , 'chai'
+    [ 'jasmine'
     ]
   , files:
     [

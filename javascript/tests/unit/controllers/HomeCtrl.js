@@ -1,5 +1,3 @@
-var expect = chai.expect
-
 describe('Unit: HomeCtrl', function () {
   beforeEach(angular.mock.module('loreof'))
 
@@ -18,6 +16,6 @@ describe('Unit: HomeCtrl', function () {
   }))
 
   it('should get topics', function () {
-    expect(scope.topics).to.be.undefined
+    expect(scope.topics).toBeUndefined()
   })
 })
