@@ -2,22 +2,27 @@
   "name": "loreoffrontend",
   "version": "0.0.1",
   "description": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.5.6",
     "gulp-stylus": "~1.0.2",
     "nib": "~1.0.3",
     "gulp-connect": "^2.0.6",
+    "gulp-concat": "^2.2.0",
     "gulp-util": "^2.2.16",
     "gulp-rename": "~1.2.0",
-    "gulp-jade": "^0.9.0"
+    "gulp-jade": "^0.9.0",
+    "karma": "~0.12.24",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-chrome-launcher": "~0.1.5",
+    "karma-mocha": "~0.1.9",
+    "karma-chai": "~0.1.0",
+    "karma-sinon": "~1.0.3"
   },
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
-    "test": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --recursive -R spec -t 5000",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -t 5000",
-    "start": "gulp"
+    "start": "gulp",
+    "test": "./node_modules/karma/bin/karma start"
   },
   "contributors": [
     {
