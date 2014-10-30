@@ -12,7 +12,5 @@ module.exports = function(config) {
   , scripts.app
   )
 
-  console.log(conf.files)
-
   config.set(conf)
 }
