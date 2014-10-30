@@ -99,6 +99,7 @@ gulp.task('default',
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
+  , 'js:test'
   , 'images'
   , 'server'
   , 'watch'])
