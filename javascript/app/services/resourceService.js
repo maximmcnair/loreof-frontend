@@ -15,6 +15,9 @@ angular.module('loreof.services')
       , getResource: function () {
           return true
         }
+      , getStaffRecommdations: function () {
+          return true
+        }
       }
 
     return service

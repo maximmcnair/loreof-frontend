@@ -78,4 +78,12 @@ describe('Unit: $resourceService', function () {
 
   it('should reject the promise and response with error')
 
+
+  /*
+   * getStaffRecommdations()
+   */
+
+  it('should have a getStaffRecommdations()', function () {
+    expect(service.getStaffRecommdations()).toBeDefined()
+  })
 })
