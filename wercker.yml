@@ -1,3 +1,9 @@
 box: wercker/nodejs
-# Build definition
 
+build:
+
+  steps:
+    - npm-install
+
+    - hgen/gulp:
+        tasks: js:test
