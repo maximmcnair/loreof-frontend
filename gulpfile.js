@@ -80,12 +80,19 @@ gulp.task('js:test', function (callback) {
   }, callback)
 })
 
+gulp.task('js:test-watch', function (callback) {
+  karma.start({
+    configFile: __dirname + '/javascript/tests/phantom.conf'
+  , singleRun: false
+  }, callback)
+})
+
 gulp.task('images', function () {
   gulp.src('./images/**/*.*', { base: './' })
     .pipe(gulp.dest('./build/'))
 })
 
-gulp.task('watch', function () {
+gulp.task('watchFiles', function () {
   gulp.watch(defaultPaths.stylus, ['stylus'])
   gulp.watch('./jade/**/**.jade', ['jade'])
   gulp.watch(defaultPaths.js.angular, ['js:build:plugins'])
@@ -108,7 +115,17 @@ gulp.task('default',
   , 'server'
   , 'js:test'
   , 'images'
-  , 'watch'])
+  ])
+
+gulp.task('watch',
+  [ 'stylus'
+  , 'jade'
+  , 'js:build:plugins'
+  , 'js:build:app'
+  , 'server'
+  , 'js:test-watch'
+  , 'images'
+  , 'watchFiles'])
 
 gulp.task('build',
   [ 'stylus'

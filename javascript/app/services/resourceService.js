@@ -12,6 +12,9 @@ angular.module('loreof.services')
             })
           return deferred.promise
         }
+      , getResource: function () {
+          return true
+        }
       }
 
     return service

@@ -17,6 +17,10 @@ describe('Unit: $resourceService', function () {
     expect(service).toBeDefined()
   })
 
+  /*
+   * getResources()
+   */
+
   it('should have a getResources()', function () {
     expect(service.getResources()).toBeDefined()
   })
@@ -42,5 +46,36 @@ describe('Unit: $resourceService', function () {
   })
 
   it('should reject the promise and respond with error')
+
+
+  /*
+   * getResource()
+   */
+
+  it('should have a getResource()', function () {
+    expect(service.getResource()).toBeDefined()
+  })
+
+  it('should resolve to a object', function () {
+    // mock /api/v1/resource with fixture
+    $httpBackend.whenGET('/api/v1/resource').respond(resourceFixture[0])
+
+    var promise = service.getResources()
+      , resource = null
+
+    promise.then(function(data){
+      resource = data
+    })
+
+    // flush response
+    $httpBackend.flush()
+
+    // should be an array
+    expect(resource instanceof Object).toBeTruthy()
+    // should match fixture
+    expect(resource).toEqual(resourceFixture[0])
+  })
+
+  it('should reject the promise and response with error')
 
 })
