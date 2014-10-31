@@ -57,10 +57,12 @@ describe('Unit: $resourceService', function () {
   })
 
   it('should resolve to a object', function () {
-    // mock /api/v1/resource with fixture
-    $httpBackend.whenGET('/api/v1/resource').respond(resourceFixture[0])
+    var fakeId = 0
 
-    var promise = service.getResources()
+    // mock /api/v1/resource with fixture
+    $httpBackend.whenGET('/api/v1/resource/' + fakeId).respond(resourceFixture[0])
+
+    var promise = service.getResource(fakeId)
       , resource = null
 
     promise.then(function(data){
@@ -77,7 +79,6 @@ describe('Unit: $resourceService', function () {
   })
 
   it('should reject the promise and response with error')
-
 
   /*
    * getStaffRecommdations()

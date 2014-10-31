@@ -12,8 +12,16 @@ angular.module('loreof.services')
             })
           return deferred.promise
         }
-      , getResource: function () {
-          return true
+      , getResource: function (id) {
+          var deferred = $q.defer()
+          $http
+            .get('/api/v1/resource/' + id).success(function (topics) {
+              deferred.resolve(topics)
+            })
+            .error(function () {
+              deferred.reject('error')
+            })
+          return deferred.promise
         }
       , getStaffRecommdations: function () {
           return true
