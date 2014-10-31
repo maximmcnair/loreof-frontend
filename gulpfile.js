@@ -58,7 +58,7 @@ gulp.task('js:build:app', function () {
 gulp.task('js:test', function (callback) {
   karma.start({
     configFile: __dirname + '/javascript/tests/phantom.conf'
-  , singleRun: false
+  , singleRun: true
   }, callback)
 })
 
