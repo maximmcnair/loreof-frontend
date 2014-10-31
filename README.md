@@ -1,5 +1,4 @@
 loreof-frontend
 ===============
 
-[![wercker status](https://app.wercker.com/status/5453b9adec3786342a000e4d/m/master "wercker status")](https://app.wercker.com/project/bykey/5453b9adec3786342a000e4d)
-
+[![wercker status](https://app.wercker.com/status/7b0e994de295c869a2688f7057e63ec0/m "wercker status")](https://app.wercker.com/project/bykey/7b0e994de295c869a2688f7057e63ec0)
