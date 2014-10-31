@@ -10,6 +10,7 @@ module.exports = function(config) {
     scripts.plugins
   , scripts.fixtures
   , scripts.app
+  , scripts.test
   )
 
   config.set(conf)

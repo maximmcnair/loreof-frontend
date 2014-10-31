@@ -1,26 +1,28 @@
 module.exports =
   { plugins:
     // dependencies
-    [ '../lib/angular.js'
-    , '../lib/angular-mocks.js'
-    , '../lib/angular-route.js'
+    [ __dirname + '/javascript/lib/angular.js'
+    , __dirname + '/javascript/lib/angular-mocks.js'
+    , __dirname + '/javascript/lib/angular-route.js'
     ]
   , fixtures:
     // Fixtures
-    [ './fixtures/topicFixtures.js'
-    , './fixtures/resourceFixtures.js'
+    [ __dirname + '/javascript/tests/fixtures/topicFixtures.js'
+    , __dirname + '/javascript/tests/fixtures/resourceFixtures.js'
     ]
   , app:
     // Application
-    [ '../app/app.js'
+    [ __dirname + '/javascript/app/app.js'
     // Controllers
-    , '../app/controllers/HomeCtrl.js'
-    , './unit/controllers/HomeCtrl.js'
+    , __dirname + '/javascript/app/controllers/HomeCtrl.js'
     // Services
-    , '../app/services/topicService.js'
-    , './unit/services/topicService.js'
-    , '../app/services/resourceService.js'
-    , './unit/services/resourceService.js'
+    , __dirname + '/javascript/app/services/topicService.js'
+    , __dirname + '/javascript/app/services/resourceService.js'
+    ]
+  , test:
+    [ __dirname + '/javascript/tests/unit/controllers/HomeCtrl.js'
+    , __dirname + '/javascript/tests/unit/services/topicService.js'
+    , __dirname + '/javascript/tests/unit/services/resourceService.js'
     ]
   }
 
