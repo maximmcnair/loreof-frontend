@@ -24,7 +24,15 @@ angular.module('loreof.services')
           return deferred.promise
         }
       , getStaffRecommdations: function () {
-          return true
+          var deferred = $q.defer()
+          $http
+            .get('/api/v1/staffresources').success(function (topics) {
+              deferred.resolve(topics)
+            })
+            .error(function () {
+              deferred.reject('error')
+            })
+          return deferred.promise
         }
       }
 

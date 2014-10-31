@@ -89,26 +89,25 @@ describe('Unit: $resourceService', function () {
       expect(service.getStaffRecommdations()).toBeDefined()
     })
 
-    it('should resolve to an array of resources')
-    // , function () {
-    //   // mock /api/v1/resource with fixture
-    //   $httpBackend.whenGET('/api/v1/staffresources').respond(resourceFixture)
+    it('should resolve to an array of resources', function () {
+      // mock /api/v1/staffresources with fixture
+      $httpBackend.whenGET('/api/v1/staffresources').respond(resourceFixture)
 
-    //   var promise = service.getResources()
-    //     , resources = null
+      var promise = service.getStaffRecommdations()
+        , resources = null
 
-    //   promise.then(function(data){
-    //     resources = data
-    //   })
+      promise.then(function(data){
+        resources = data
+      })
 
-    //   // flush response
-    //   $httpBackend.flush()
+      // flush response
+      $httpBackend.flush()
 
-    //   // should be an array
-    //   expect(resources instanceof Array).toBeTruthy()
-    //   // should match fixture
-    //   expect(resources).toEqual(resourceFixture)
-    // })
+      // should be an array
+      expect(resources instanceof Array).toBeTruthy()
+      // should match fixture
+      expect(resources).toEqual(resourceFixture)
+    })
   })
 
 })
