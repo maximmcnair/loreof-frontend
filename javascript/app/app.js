@@ -12,7 +12,7 @@ angular
 
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home'
+        templateUrl: 'partials/home.html'
       , controller: 'HomeCtrl'
       })
   })

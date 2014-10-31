@@ -16,9 +16,19 @@ var defaultPaths =
     , './stylus/*.styl'
     ]
   , jade:
-    [ './jade/*.jade'
-    , './jade/**/*.jade'
-    ]
+    { index:
+        { location: './jade/layout.jade'
+        , name: 'index.html'
+        }
+    , partials:
+      [ { location: './jade/partials/home.jade'
+        , name: 'home.html'
+        }
+      , { location: './jade/partials/resource.jade'
+        , name: 'resource.html'
+        }
+      ]
+    }
   , js: require('./scripts')
   }
 
@@ -35,10 +45,18 @@ gulp.task('stylus', function () {
 })
 
 gulp.task('jade', function () {
-  gulp.src('./jade/layout.jade')
+  var indexTemp = defaultPaths.jade.index
+  gulp.src(indexTemp.location)
     .pipe(jade())
-    .pipe(rename('index.html'))
+    .pipe(rename(indexTemp.name))
     .pipe(gulp.dest('./build/'))
+
+  defaultPaths.jade.partials.forEach(function(partial){
+    gulp.src(partial.location)
+      .pipe(jade())
+      .pipe(rename(partial.name))
+      .pipe(gulp.dest('./build/partials/'))
+  })
 })
 
 function compileScript(path, name) {
@@ -69,7 +87,7 @@ gulp.task('images', function () {
 
 gulp.task('watch', function () {
   gulp.watch(defaultPaths.stylus, ['stylus'])
-  gulp.watch(defaultPaths.jade, ['jade'])
+  gulp.watch('./jade/**/**.jade', ['jade'])
   gulp.watch(defaultPaths.js.angular, ['js:build:plugins'])
   gulp.watch(defaultPaths.js.app, ['js:build:app'])
 })
@@ -87,9 +105,9 @@ gulp.task('default',
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
+  , 'server'
   , 'js:test'
   , 'images'
-  , 'server'
   , 'watch'])
 
 gulp.task('build',
