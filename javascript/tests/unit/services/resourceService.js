@@ -27,7 +27,7 @@ describe('Unit: $resourceService', function () {
 
     it('should resolve to an array of resources', function() {
       // mock /api/v1/resource with fixture
-      $httpBackend.whenGET('/api/v1/resource').respond(resourceFixture)
+      $httpBackend.whenGET(apiURl + '/api/v1/resource').respond(resourceFixture)
 
       var promise = service.getResources()
         , resources = null
@@ -60,7 +60,7 @@ describe('Unit: $resourceService', function () {
       var fakeId = 0
 
       // mock /api/v1/resource with fixture
-      $httpBackend.whenGET('/api/v1/resource/' + fakeId).respond(resourceFixture[0])
+      $httpBackend.whenGET(apiURl + '/api/v1/resource/' + fakeId).respond(resourceFixture[0])
 
       var promise = service.getResource(fakeId)
         , resource = null
@@ -91,7 +91,7 @@ describe('Unit: $resourceService', function () {
 
     it('should resolve to an array of resources', function () {
       // mock /api/v1/staffresources with fixture
-      $httpBackend.whenGET('/api/v1/staffresources').respond(resourceFixture)
+      $httpBackend.whenGET(apiURl + '/api/v1/staffresources').respond(resourceFixture)
 
       var promise = service.getStaffRecommdations()
         , resources = null

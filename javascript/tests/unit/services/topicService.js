@@ -23,7 +23,7 @@ describe('Unit: $topicService', function () {
 
   it('should resolve to an array of topics', function() {
     // mock /api/v1/topic with fixture
-    $httpBackend.whenGET('/api/v1/topic').respond(topicFixture)
+    $httpBackend.whenGET(apiURl + '/api/v1/topic').respond(topicFixture)
 
     var promise = service.getTopics()
       , topics = null
