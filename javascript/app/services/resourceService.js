@@ -4,7 +4,7 @@ angular.module('loreof.services')
       { getResources: function () {
           var deferred = $q.defer()
           $http
-            .get('/api/v1/resource').success(function (topics) {
+            .get(apiURl + '/api/v1/resource').success(function (topics) {
               deferred.resolve(topics)
             })
             .error(function () {
@@ -15,7 +15,7 @@ angular.module('loreof.services')
       , getResource: function (id) {
           var deferred = $q.defer()
           $http
-            .get('/api/v1/resource/' + id).success(function (topics) {
+            .get(apiURl + '/api/v1/resource/' + id).success(function (topics) {
               deferred.resolve(topics)
             })
             .error(function () {
@@ -26,7 +26,7 @@ angular.module('loreof.services')
       , getStaffRecommdations: function () {
           var deferred = $q.defer()
           $http
-            .get('/api/v1/staffresources').success(function (topics) {
+            .get(apiURl + '/api/v1/staffresources').success(function (topics) {
               deferred.resolve(topics)
             })
             .error(function () {
