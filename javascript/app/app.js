@@ -1,6 +1,5 @@
 'use strict'
-
-angular
+var app = angular
   .module('loreof',
   [ 'ngRoute'
   , 'loreof.controllers'
