@@ -1,8 +1,8 @@
 loreOfControllers
-  .controller('TopicCtrl', ['$scope', '$resourceService', '$http',
-  function($scope, $resourceService, $http) {
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams',
+  function($scope, $resourceService, $http, $routeParams) {
 
-    var query = {topicSlug: 'bitcoin'}
+    var query = {topicSlug: $routeParams.topic}
     $resourceService.getResources(query).then(function(data) {
       $scope.resources = data
     })
