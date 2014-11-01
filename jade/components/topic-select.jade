@@ -6,20 +6,21 @@ section.topicSelect
       | documentaries, short videos & talks.
 
     .topicSelect-topics
-      a.btn Technology
-      a.btn Philosophy
-      a.btn Science
-      a.btn Architecture
-      br
-      a.btn Art
-      a.btn Design
-      a.btn Astronomy
-      a.btn Space
-      a.btn Nature
-      a.btn Climate Change
-      br
-      a.btn Politics
-      a.btn Religion
-      a.btn Drugs
-      a.btn History
-      a.btn Sports
+      a(ng-repeat="topic in topics", ng-bind="topic.title", ng-href="/topic/{{topic.slug}}").btn
+      //- a.btn Technology
+      //- a.btn Philosophy
+      //- a.btn Science
+      //- a.btn Architecture
+      //- br
+      //- a.btn Art
+      //- a.btn Design
+      //- a.btn Astronomy
+      //- a.btn Space
+      //- a.btn Nature
+      //- a.btn Climate Change
+      //- br
+      //- a.btn Politics
+      //- a.btn Religion
+      //- a.btn Drugs
+      //- a.btn History
+      //- a.btn Sports

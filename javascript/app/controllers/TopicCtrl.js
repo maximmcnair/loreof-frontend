@@ -2,9 +2,21 @@ loreOfControllers
   .controller('TopicCtrl', ['$scope', '$resourceService', '$http',
   function($scope, $resourceService, $http) {
 
-    $resourceService.getResources().then(function(data) {
+    var query = {topicSlug: 'bitcoin'}
+    console.log(query)
+    $resourceService.getResources(query).then(function(data) {
+      console.log(data)
       $scope.resources = data
     })
+
+    // $http(
+    //   { url: apiURl + '/api/v1/resource'
+    //   , method: 'GET'
+    //   , params: {topicSlug: 'bitcoin'}
+    //   })
+    //   .success(function (topics) {
+    //     deferred.resolve(topics)
+    //   })
 
     // $http.get(apiURl + '/api/topic/internet')
     //   .success(function(data, status, headers, config) {

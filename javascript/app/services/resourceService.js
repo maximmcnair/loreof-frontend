@@ -1,10 +1,14 @@
 angular.module('loreof.services')
   .factory('$resourceService', ['$http', '$q', function ($http, $q) {
     var service =
-      { getResources: function () {
+      { getResources: function (query) {
           var deferred = $q.defer()
-          $http
-            .get(apiURl + '/api/v1/resource').success(function (topics) {
+          $http(
+            { url: apiURl + '/api/v1/resource'
+            , method: 'GET'
+            , params: query
+            })
+            .success(function (topics) {
               deferred.resolve(topics)
             })
             .error(function () {

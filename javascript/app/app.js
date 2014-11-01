@@ -15,10 +15,21 @@ var apiURl = 'http://localhost:4002'
           templateUrl: 'partials/home.html'
         , controller: 'HomeCtrl'
         })
-        // .when('/topic/:topic', {
-        //   templateUrl: 'partials/topic'
-        // , controller: 'TopicCtrl'
-        // })
+        .when('/topic/:topic', {
+          templateUrl: 'partials/topic.html'
+        , controller: 'TopicCtrl'
+        })
     })
 
 var loreOfControllers = angular.module('loreof.controllers', [])
+
+/* Converts an object into a key/value par with an optional prefix. Used for converting objects to a query string */
+var qs = function(obj, prefix){
+  var str = [];
+  for (var p in obj) {
+    var k = prefix ? prefix + "[" + p + "]" : p,
+        v = obj[p];
+    str.push(angular.isObject(v) ? qs(v, k) : (k) + "=" + encodeURIComponent(v));
+  }
+  return str.join("&");
+}

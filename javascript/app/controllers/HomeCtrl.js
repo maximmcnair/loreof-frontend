@@ -1,17 +1,9 @@
 loreOfControllers
-  .controller('HomeCtrl', ['$scope', '$resourceService', '$http',
-  function($scope, $resourceService, $http) {
+  .controller('HomeCtrl', ['$scope', '$topicService', '$http',
+  function($scope, $topicService, $http) {
 
-    $resourceService.getResources().then(function(data) {
-      $scope.resources = data
+    $topicService.getTopics().then(function(data) {
+      $scope.topics = data
     })
-
-    // $http.get(apiURl + '/api/topic/internet')
-    //   .success(function(data, status, headers, config) {
-    //     console.log('success', data, status)
-    //   })
-    //   .error(function(data, status, headers, config) {
-    //     console.log('error', data, status)
-    //   })
 
   }])

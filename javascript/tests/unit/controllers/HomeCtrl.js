@@ -3,48 +3,48 @@
  */
 
 describe('Unit: HomeCtrl', function () {
-  // beforeEach(angular.mock.module('loreof'))
+  beforeEach(angular.mock.module('loreof'))
 
-  // var scope
-  //   , $resourceService
+  var scope
+    , $topicService
 
-  // /*
-  //  * Mock $resourceService
-  //  */
-  // beforeEach(function(){
-  //   var mockResourceService = {}
-  //   module('loreof', function($provide) {
-  //     $provide.value('$resourceService', mockResourceService)
-  //   })
+  /*
+   * Mock $topicService
+   */
+  beforeEach(function(){
+    var mockResourceService = {}
+    module('loreof', function($provide) {
+      $provide.value('$topicService', mockResourceService)
+    })
 
-  //   inject(function($q) {
-  //     mockResourceService.data = resourceFixture
+    inject(function($q) {
+      mockResourceService.data = resourceFixture
 
-  //     mockResourceService.getResources = function() {
-  //       var defer = $q.defer()
-  //       defer.resolve(this.data)
-  //       return defer.promise
-  //     }
-  //   })
-  // })
+      mockResourceService.getTopics = function() {
+        var defer = $q.defer()
+        defer.resolve(this.data)
+        return defer.promise
+      }
+    })
+  })
 
-  // beforeEach(inject(function($controller, $rootScope, _$resourceService_) {
-  //   scope = $rootScope.$new()
-  //   $resourceService = _$resourceService_
-  // }))
+  beforeEach(inject(function($controller, $rootScope, _$topicService_) {
+    scope = $rootScope.$new()
+    $topicService = _$topicService_
+  }))
 
-  // beforeEach(inject(function($controller, $rootScope, _$resourceService_) {
-  //   scope = $rootScope.$new()
-  //   $resourceService = _$resourceService_
+  beforeEach(inject(function($controller, $rootScope, _$topicService_) {
+    scope = $rootScope.$new()
+    $topicService = _$topicService_
 
-  //   $controller('HomeCtrl',
-  //                 {$scope: scope, $resourceService: $resourceService })
+    $controller('HomeCtrl',
+                  {$scope: scope, $topicService: $topicService })
 
-  //   scope.$digest()
-  // }))
+    scope.$digest()
+  }))
 
-  // it('should contain resources at startup', function() {
-  //   expect(scope.resources).toEqual(resourceFixture)
-  // })
+  it('should contain topics at startup', function() {
+    expect(scope.topics).toEqual(resourceFixture)
+  })
 
 })
