@@ -15,8 +15,10 @@ var apiURl = 'http://localhost:4002'
           templateUrl: 'partials/home.html'
         , controller: 'HomeCtrl'
         })
-        .when('/topic/:topic', {
-          templateUrl: 'partials/topic'
-        , controller: 'TopicCtrl'
-        })
+        // .when('/topic/:topic', {
+        //   templateUrl: 'partials/topic'
+        // , controller: 'TopicCtrl'
+        // })
     })
+
+var loreOfControllers = angular.module('loreof.controllers', [])

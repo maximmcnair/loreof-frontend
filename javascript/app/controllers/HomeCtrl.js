@@ -1,5 +1,4 @@
-angular
-  .module('loreof.controllers', [])
+loreOfControllers
   .controller('HomeCtrl', ['$scope', '$resourceService', '$http',
   function($scope, $resourceService, $http) {
 
