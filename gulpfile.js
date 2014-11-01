@@ -24,6 +24,9 @@ var defaultPaths =
       [ { location: './jade/partials/home.jade'
         , name: 'home.html'
         }
+      , { location: './jade/partials/topic.jade'
+        , name: 'topic.html'
+        }
       , { location: './jade/components/resource-preview.jade'
         , name: 'components/resource-preview.html'
         }
@@ -102,20 +105,11 @@ gulp.task('watchFiles', function () {
   gulp.watch(defaultPaths.js.app, ['js:build:app'])
 })
 
-gulp.task('server', function () {
-  connect.server({
-    root: './build/'
-  , host: '*'
-  , port: '5230'
-  })
-})
-
 gulp.task('default',
   [ 'stylus'
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
-  , 'server'
   , 'js:test'
   , 'images'
   ])
@@ -125,7 +119,6 @@ gulp.task('watch',
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
-  , 'server'
   , 'js:test-watch'
   , 'images'
   , 'watchFiles'])

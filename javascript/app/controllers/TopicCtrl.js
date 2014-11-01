@@ -1,6 +1,6 @@
 angular
   .module('loreof.controllers', [])
-  .controller('HomeCtrl', ['$scope', '$resourceService', '$http',
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http',
   function($scope, $resourceService, $http) {
 
     $resourceService.getResources().then(function(data) {

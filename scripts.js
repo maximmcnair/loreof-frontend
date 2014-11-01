@@ -15,6 +15,7 @@ module.exports =
     [ __dirname + '/javascript/app/app.js'
     // Controllers
     , __dirname + '/javascript/app/controllers/HomeCtrl.js'
+    , __dirname + '/javascript/app/controllers/TopicCtrl.js'
     // Services
     , __dirname + '/javascript/app/services/topicService.js'
     , __dirname + '/javascript/app/services/resourceService.js'
@@ -23,6 +24,7 @@ module.exports =
     ]
   , test:
     [ __dirname + '/javascript/tests/unit/controllers/HomeCtrl.js'
+    , __dirname + '/javascript/tests/unit/controllers/TopicCtrl.js'
     , __dirname + '/javascript/tests/unit/services/topicService.js'
     , __dirname + '/javascript/tests/unit/services/resourceService.js'
     , __dirname + '/javascript/tests/unit/directives/resourceDirective.js'

@@ -2,7 +2,9 @@
   "name": "loreoffrontend",
   "version": "0.0.1",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "express": "~4.10.1"
+  },
   "devDependencies": {
     "gulp": "^3.5.6",
     "gulp-stylus": "~1.0.2",
