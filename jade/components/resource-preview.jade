@@ -1,13 +1,13 @@
 a(href="#").resourcePreview
   .resourcePreview-img
-    img(src="/images/placeholder/resource1.png")
+    img(ng-src="{{thumbs.hqdefault}}")
     span.resourcePreview-label.label.label--documentary Documentary
   .resourcePreview-desc
-    h3.resourcePreview-title Wonders of the Solar System
+    h3(ng-bind="resource.title").resourcePreview-title
     .resourcePreview-uploaded
       .resourcePreview-uploaded-img
         img(src="http://loreof.co/img/users/maximmcnair.jpg")
       .resourcePreview-uploaded-user
         .resourcePreview-uploaded-user-title Uploaded by
-        .resourcePreview-uploaded-user-username Maxim McNair
-    .resourcePreview-votes 56 votes
+        span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username
+    .resourcePreview-votes {{resource.recommendations.amount}} votes

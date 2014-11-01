@@ -19,6 +19,7 @@ module.exports =
     // Services
     , __dirname + '/javascript/app/services/topicService.js'
     , __dirname + '/javascript/app/services/resourceService.js'
+    , __dirname + '/javascript/app/services/mediaService.js'
     // Directives
     , __dirname + '/javascript/app/directives/resourceDirective.js'
     ]
@@ -27,6 +28,7 @@ module.exports =
     , __dirname + '/javascript/tests/unit/controllers/TopicCtrl.js'
     , __dirname + '/javascript/tests/unit/services/topicService.js'
     , __dirname + '/javascript/tests/unit/services/resourceService.js'
+    , __dirname + '/javascript/tests/unit/services/mediaService.js'
     , __dirname + '/javascript/tests/unit/directives/resourceDirective.js'
     ]
   }

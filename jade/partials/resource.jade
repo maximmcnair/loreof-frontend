@@ -4,11 +4,11 @@ article.resource
       .resource-embed
         iframe(width="560", height="315", src="//www.youtube.com/embed/ysa5OBhXz-Q", frameborder="0", allowfullscreen)
       .resource-vote
-        span 56 votes
+        span {{recommendations.amount}} votes
         a.btn Recommend This
 
   .content
-    h1.resource-title All watched over by machines of loving grace
+    h1(ng-bind="resource.title").resource-title
     span.label.label--documentary Documentary
     .resource-desc
       p Experience the extraordinary…in our planet’s own backyard. Wonders explores some of the most amazing features of our very own solar system – how the forces of nature carved out beauty and order from the chaos of space; how our home planet doesn’t sit in magnificent isolation but is intimately connected with the rest of the solar system; and how these connections have created the haven we call Earth. Using the latest scientific knowledge and breathtaking images beamed back from the fleet of probes, rovers and telescopes currently in space, this gorgeous imagery will is paired with some of the most spectacular, extreme locations on Earth help to reveal wonders never thought possible.
