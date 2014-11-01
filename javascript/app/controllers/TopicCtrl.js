@@ -3,9 +3,7 @@ loreOfControllers
   function($scope, $resourceService, $http) {
 
     var query = {topicSlug: 'bitcoin'}
-    console.log(query)
     $resourceService.getResources(query).then(function(data) {
-      console.log(data)
       $scope.resources = data
     })
 
