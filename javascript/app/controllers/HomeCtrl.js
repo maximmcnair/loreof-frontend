@@ -7,13 +7,13 @@ angular
       $scope.resources = data
     })
 
-    $http.get(apiURl + '/api/topic/internet')
-      .success(function(data, status, headers, config) {
-        console.log('success', data, status)
-      })
-      .error(function(data, status, headers, config) {
-        console.log('error', data, status)
-      })
+    // $http.get(apiURl + '/api/topic/internet')
+    //   .success(function(data, status, headers, config) {
+    //     console.log('success', data, status)
+    //   })
+    //   .error(function(data, status, headers, config) {
+    //     console.log('error', data, status)
+    //   })
 
 
   }])
