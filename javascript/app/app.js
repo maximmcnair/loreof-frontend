@@ -5,6 +5,7 @@ angular
   [ 'ngRoute'
   , 'loreof.controllers'
   , 'loreof.services'
+  , 'loreof.directives'
   ])
   .config(function($routeProvider, $sceDelegateProvider, $locationProvider) {
     // use the HTML5 History API

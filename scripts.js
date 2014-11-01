@@ -18,11 +18,14 @@ module.exports =
     // Services
     , __dirname + '/javascript/app/services/topicService.js'
     , __dirname + '/javascript/app/services/resourceService.js'
+    // Directives
+    , __dirname + '/javascript/app/directives/resourceDirective.js'
     ]
   , test:
     [ __dirname + '/javascript/tests/unit/controllers/HomeCtrl.js'
     , __dirname + '/javascript/tests/unit/services/topicService.js'
     , __dirname + '/javascript/tests/unit/services/resourceService.js'
+    , __dirname + '/javascript/tests/unit/directives/resourceDirective.js'
     ]
   }
 

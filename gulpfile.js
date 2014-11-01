@@ -24,6 +24,9 @@ var defaultPaths =
       [ { location: './jade/partials/home.jade'
         , name: 'home.html'
         }
+      , { location: './jade/components/resource-preview.jade'
+        , name: 'components/resource-preview.html'
+        }
       , { location: './jade/partials/resource.jade'
         , name: 'resource.html'
         }

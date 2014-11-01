@@ -31,4 +31,6 @@ var topicFixture =
     }
   , { title: 'Sports'
     }
+  , { title: 'Speeches'
+    }
   ]

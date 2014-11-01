@@ -45,5 +45,9 @@ html(ng-app="loreof")
     div.ng-view
       //- include partials/resource
       //- include partials/home
+
+  script(type="text/ng-template" id="resource-preview.html")
+    include components/resource-preview
+
   script(src="js/angular.js")
   script(src="js/app.js")
