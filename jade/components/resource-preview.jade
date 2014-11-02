@@ -1,6 +1,11 @@
 .resourcePreview-img
   img(ng-src="{{thumbs.mqdefault}}")
-  span.resourcePreview-label.label.label--documentary Documentary
+  span(ng-show="resource.type === 'book'").resourcePreview-label.label.label--book Book
+  span(ng-show="resource.type === 'audiobook'").resourcePreview-label.label.label--audiobook Audiobook
+  span(ng-show="resource.type === 'documentary'").resourcePreview-label.label.label--documentary Documentary
+  span(ng-show="resource.type === 'talk'").resourcePreview-label.label.label--talk Talk
+  span(ng-show="resource.type === 'video'").resourcePreview-label.label.label--video Short Video
+  span(ng-show="resource.type === 'lecture'").resourcePreview-label.label.label--lecture Lecture
 .resourcePreview-desc
   h3(ng-bind="resource.title").resourcePreview-title
   .resourcePreview-uploaded
