@@ -15,6 +15,7 @@ loreOfControllers
 
     var query = {topicSlug: $routeParams.topic}
     $resourceService.getResources(query).then(function(data) {
+      console.log(data)
       $scope.resources = data
     })
 

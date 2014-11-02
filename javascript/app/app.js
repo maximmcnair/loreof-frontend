@@ -19,6 +19,10 @@ var apiURl = 'http://localhost:4002'
           templateUrl: 'partials/topic.html'
         , controller: 'TopicCtrl'
         })
+        .when('/resource/:id', {
+          templateUrl: 'partials/resource.html'
+        , controller: 'ResourceCtrl'
+        })
     })
 
 var loreOfControllers = angular.module('loreof.controllers', [])

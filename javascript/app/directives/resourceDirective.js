@@ -8,7 +8,6 @@ angular.module('loreof.directives', [])
         $scope.thumbs = $mediaService.getThumbnail($scope.resource.trailer)
       }
     , link: function ($scope) {
-        console.log($scope)
       }
     }
   })
