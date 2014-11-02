@@ -1,26 +1,36 @@
 section.topicSelect
   .content
-    h1
+    h1.topicSelect-title
       | Learn about a topic from people's suggested 
       br
       | documentaries, short videos & talks.
 
-    .topicSelect-topics
-      a(ng-repeat="topic in topics", ng-bind="topic.title", ng-href="/topic/{{topic.slug}}").btn
-      //- a.btn Technology
-      //- a.btn Philosophy
-      //- a.btn Science
-      //- a.btn Architecture
-      //- br
-      //- a.btn Art
-      //- a.btn Design
-      //- a.btn Astronomy
-      //- a.btn Space
-      //- a.btn Nature
-      //- a.btn Climate Change
-      //- br
-      //- a.btn Politics
-      //- a.btn Religion
-      //- a.btn Drugs
-      //- a.btn History
-      //- a.btn Sports
+    div(ng-show="topicsVisible")
+      h3.topicSelect-subtitle Pick a topic
+      .topicSelect-topics
+        //- a(ng-repeat="topic in topics", ng-bind="topic.title", ng-href="/topic/{{topic.slug}}").btn
+        a(ng-repeat="topic in topics", ng-bind="topic.title", ng-click="showTags(topic)").btn
+        //- a.btn Technology
+        //- a.btn Philosophy
+        //- a.btn Science
+        //- a.btn Architecture
+        //- br
+        //- a.btn Art
+        //- a.btn Design
+        //- a.btn Astronomy
+        //- a.btn Space
+        //- a.btn Nature
+        //- a.btn Climate Change
+        //- br
+        //- a.btn Politics
+        //- a.btn Religion
+        //- a.btn Drugs
+        //- a.btn History
+        //- a.btn Sports
+
+    div(ng-show="tagsVisible")
+      h3.topicSelect-subtitle Select some tags
+      a.topicSelect-viewAll or view everything uploaded for this topic
+      .topicSelect-topics
+        a(ng-repeat="tag in tags", ng-bind="tag.title").btn
+      a(ng-click="showTopics()").topicSelect-backToTopics Back to topics

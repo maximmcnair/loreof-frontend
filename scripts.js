@@ -2,7 +2,6 @@ module.exports =
   { plugins:
     // dependencies
     [ __dirname + '/javascript/lib/angular.js'
-    , __dirname + '/javascript/lib/angular-mocks.js'
     , __dirname + '/javascript/lib/angular-route.js'
     , __dirname + '/javascript/lib/angular-sanitize.js'
     ]
@@ -26,7 +25,8 @@ module.exports =
     , __dirname + '/javascript/app/directives/resourceDirective.js'
     ]
   , test:
-    [ __dirname + '/javascript/tests/unit/controllers/HomeCtrl.js'
+    [ __dirname + '/javascript/lib/angular-mocks.js'
+    , __dirname + '/javascript/tests/unit/controllers/HomeCtrl.js'
     , __dirname + '/javascript/tests/unit/controllers/TopicCtrl.js'
     , __dirname + '/javascript/tests/unit/controllers/ResourceCtrl.js'
     , __dirname + '/javascript/tests/unit/services/topicService.js'

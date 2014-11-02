@@ -76,7 +76,7 @@ gulp.task('js:build:plugins', function () {
   return compileScript(defaultPaths.js.plugins, 'angular.js')
 })
 gulp.task('js:build:app', function () {
-  return compileScript(defaultPaths.js.app, 'app.js')
+  return compileScript(defaultPaths.js.fixtures.concat(defaultPaths.js.app), 'app.js')
 })
 
 gulp.task('js:test', function (callback) {
@@ -119,6 +119,6 @@ gulp.task('watch',
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
-  , 'js:test-watch'
+  // , 'js:test-watch'
   , 'images'
   , 'watchfiles'])
