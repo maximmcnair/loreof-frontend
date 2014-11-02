@@ -23,6 +23,12 @@ var apiURl = 'http://localhost:4002'
           templateUrl: 'partials/resource.html'
         , controller: 'ResourceCtrl'
         })
+
+      $sceDelegateProvider.resourceUrlWhitelist(
+        [ 'self'
+        , 'https://www.youtube.com/**'
+        , 'http://player.vimeo.com/**'
+        ])
     })
 
 var loreOfControllers = angular.module('loreof.controllers', [])

@@ -2,20 +2,26 @@ article.resource
   .resource-video-wrapper
     .resource-video
       .resource-embed
-        iframe(width="560", height="315", src="//www.youtube.com/embed/ysa5OBhXz-Q", frameborder="0", allowfullscreen)
+        //- div(ng-bind-html="<iframe src='https://www.youtube.com/embed/Bu6SE5TYrCM' frameborder='0' allowfullscreen='allowfullscreen'>")
+        iframe(width="560", height="315", ng-src="{{video}}", frameborder="0", allowfullscreen)
       .resource-vote
-        span {{recommendations.amount}} votes
+        span {{resource.recommendations.amount}} votes
         a.btn Recommend This
 
   .content
     h1(ng-bind="resource.title").resource-title
-    span.label.label--documentary Documentary
-    .resource-desc
-      p Experience the extraordinary…in our planet’s own backyard. Wonders explores some of the most amazing features of our very own solar system – how the forces of nature carved out beauty and order from the chaos of space; how our home planet doesn’t sit in magnificent isolation but is intimately connected with the rest of the solar system; and how these connections have created the haven we call Earth. Using the latest scientific knowledge and breathtaking images beamed back from the fleet of probes, rovers and telescopes currently in space, this gorgeous imagery will is paired with some of the most spectacular, extreme locations on Earth help to reveal wonders never thought possible.
+    span(ng-show="resource.type === 'book'").label.label--book Book
+    span(ng-show="resource.type === 'audiobook'").label.label--audiobook Audiobook
+    span(ng-show="resource.type === 'documentary'").label.label--documentary Documentary
+    span(ng-show="resource.type === 'talk'").label.label--talk Talk
+    span(ng-show="resource.type === 'video'").label.label--video Short Video
+    span(ng-show="resource.type === 'lecture'").label.label--lecture Lecture
+    //- .resource-desc
+    //-   p Experience the extraordinary…in our planet’s own backyard. Wonders explores some of the most amazing features of our very own solar system – how the forces of nature carved out beauty and order from the chaos of space; how our home planet doesn’t sit in magnificent isolation but is intimately connected with the rest of the solar system; and how these connections have created the haven we call Earth. Using the latest scientific knowledge and breathtaking images beamed back from the fleet of probes, rovers and telescopes currently in space, this gorgeous imagery will is paired with some of the most spectacular, extreme locations on Earth help to reveal wonders never thought possible.
 
     .resourcePreview-uploaded
       .resourcePreview-uploaded-img
-        img(src="http://loreof.co/img/users/maximmcnair.jpg")
+        img(ng-src="http://localhost:4002/{{resource.uploaded.avatar}}")
       .resourcePreview-uploaded-user
         .resourcePreview-uploaded-user-title Uploaded by
-        .resourcePreview-uploaded-user-username Maxim McNair
+        span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username

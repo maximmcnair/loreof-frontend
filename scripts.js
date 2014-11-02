@@ -4,6 +4,7 @@ module.exports =
     [ __dirname + '/javascript/lib/angular.js'
     , __dirname + '/javascript/lib/angular-mocks.js'
     , __dirname + '/javascript/lib/angular-route.js'
+    , __dirname + '/javascript/lib/angular-sanitize.js'
     ]
   , fixtures:
     // Fixtures
