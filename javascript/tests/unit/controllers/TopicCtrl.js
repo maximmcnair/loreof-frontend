@@ -38,13 +38,27 @@ describe('Unit: TopicCtrl', function () {
     $resourceService = _$resourceService_
 
     $controller('TopicCtrl',
-                  {$scope: scope, $resourceService: $resourceService })
+      { $scope: scope
+      , $resourceService: $resourceService
+      , $routeParams: {topic: 'wildlife'}
+      })
 
     scope.$digest()
   }))
 
+
+  /*
+   * Tests resource data
+   */
   it('should contain resources at startup', function() {
     expect(scope.resources).toEqual(resourceFixture)
+  })
+
+  /*
+   * Test topic data
+   */
+  it('should have title of topic in scope', function() {
+    expect(scope.topic.title).toEqual('Wildlife')
   })
 
 })

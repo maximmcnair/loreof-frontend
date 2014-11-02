@@ -1,6 +1,17 @@
+function toTitleCase(str){
+  return str.replace(/\w\S*/g, function(txt){
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  })
+}
+
 loreOfControllers
   .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams',
   function($scope, $resourceService, $http, $routeParams) {
+
+    $scope.topic =
+        { slug: $routeParams.topic
+        , title: toTitleCase($routeParams.topic.replace('-', ' '))
+        }
 
     var query = {topicSlug: $routeParams.topic}
     $resourceService.getResources(query).then(function(data) {
