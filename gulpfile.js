@@ -98,7 +98,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('./build/'))
 })
 
-gulp.task('watch', function () {
+gulp.task('watchfiles', function () {
   gulp.watch(defaultPaths.stylus, ['stylus'])
   gulp.watch('./jade/**/**.jade', ['jade'])
   gulp.watch(defaultPaths.js.angular, ['js:build:plugins'])
@@ -121,4 +121,4 @@ gulp.task('watch',
   , 'js:build:app'
   , 'js:test-watch'
   , 'images'
-  , 'watch'])
+  , 'watchfiles'])
