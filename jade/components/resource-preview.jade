@@ -1,13 +1,12 @@
-a(href="#").resourcePreview
-  .resourcePreview-img
-    img(ng-src="{{thumbs.mqdefault}}")
-    span.resourcePreview-label.label.label--documentary Documentary
-  .resourcePreview-desc
-    h3(ng-bind="resource.title").resourcePreview-title
-    .resourcePreview-uploaded
-      .resourcePreview-uploaded-img
-        img(src="http://loreof.co/img/users/maximmcnair.jpg")
-      .resourcePreview-uploaded-user
-        .resourcePreview-uploaded-user-title Uploaded by
-        span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username
-    .resourcePreview-votes {{resource.recommendations.amount}} votes
+.resourcePreview-img
+  img(ng-src="{{thumbs.mqdefault}}")
+  span.resourcePreview-label.label.label--documentary Documentary
+.resourcePreview-desc
+  h3(ng-bind="resource.title").resourcePreview-title
+  .resourcePreview-uploaded
+    .resourcePreview-uploaded-img
+      img(ng-src="http://localhost:4002/{{resource.uploaded.avatar}}")
+    .resourcePreview-uploaded-user
+      .resourcePreview-uploaded-user-title Uploaded by
+      span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username
+  .resourcePreview-votes {{resource.recommendations.amount}} votes
