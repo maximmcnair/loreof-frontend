@@ -1,57 +1,120 @@
 var topicFixture =
-  [
-    // { title: 'Bitcoin'
-    // , slug: 'bitcoin'
-    // , id: '53f37d1fe480b5fcd1172915'
-    // }
-    { title: 'Wildlife'
+  [ { title: 'Science'
     , tags:
-      [ { title: 'Fish'
+      [ { title: 'Gravity'
         }
-      , { title: 'Mammals'
+      , { title: 'Biology'
         }
-      , { title: 'Insects'
+      , { title: 'Chemistry'
+        }
+      , { title: 'Light'
+        }
+      , { title: 'Physics'
+        }
+      , { title: 'Big Bang'
+        }
+      , { title: 'Evolution'
         }
       ]
-    }
-  , { title: 'Science'
-    }
-  , { title: 'Technology'
-    }
-  , { title: 'Philosophy'
-    , tags:
-      [ { title: 'Stoicism'
-        }
-      , { title: 'Freud'
-        }
-      , { title: 'Marxism'
-        }
-      ]
-    }
-  , { title: 'Architecture'
-    }
-  , { title: 'Art'
-    }
-  , { title: 'Design'
-    }
-  , { title: 'Astronomy'
     }
   , { title: 'Space'
+    , tags:
+      [ { title: 'Nasa'
+        }
+      , { title: 'Planets'
+        }
+      , { title: 'Moons'
+        }
+      , { title: 'Solar System'
+        }
+      , { title: 'Space Race'
+        }
+      ]
+    }
+  , { title: 'Technology'
+    , tags:
+      [ { title: 'Bitcoin'
+        }
+      , { title: 'Drones'
+        }
+      , { title: 'Internet'
+        }
+      , { title: 'Singularity'
+        }
+      ]
+    }
+  , { title: 'Sport'
+    , tags:
+      [ { title: 'Climbing'
+        }
+      , { title: 'Gaming'
+        }
+      , { title: 'Skateboarding'
+        }
+      , { title: 'Surfing'
+        }
+      ]
+    }
+  , { title: 'Art & Design'
+    , tags:
+      [ { title: 'Advertising'
+        }
+      , { title: 'Typography'
+        }
+      , { title: 'Design'
+        }
+      , { title: 'Architecture'
+        }
+      , { title: 'Fashion'
+        }
+      , { title: 'Graffiti'
+        }
+      , { title: 'Painting'
+        }
+      , { title: 'Photography'
+        }
+      ]
     }
   , { title: 'Nature'
+    , tags:
+      [ { title: 'Bacteria'
+        }
+      , { title: 'Ecosystem'
+        }
+      , { title: 'Volcanoes'
+        }
+      , { title: 'Birds'
+        }
+      , { title: 'Fish'
+        }
+      , { title: 'Oceans'
+        }
+      , { title: 'Dolphins'
+        }
+      ]
     }
-  , { title: 'Climate Change'
-    }
-  , { title: 'Politics'
+  , { title: 'Social Issues'
+    , tags:
+      [ { title: 'Climate Change'
+        }
+      , { title: 'Sustainability'
+        }
+      , { title: 'Occupy'
+        }
+      , { title: 'Animal Rights'
+        }
+      ]
     }
   , { title: 'Religion'
-    }
-  , { title: 'Drugs'
-    }
-  , { title: 'History'
-    }
-  , { title: 'Sports'
-    }
-  , { title: 'Speeches'
+    , tags:
+      [ { title: 'Buddhism'
+        }
+      , { title: 'Christianity'
+        }
+      , { title: 'Hinduism'
+        }
+      , { title: 'Scientology'
+        }
+      ]
     }
   ]
