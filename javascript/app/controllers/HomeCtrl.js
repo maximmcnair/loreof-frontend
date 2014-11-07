@@ -1,6 +1,6 @@
 loreOfControllers
-  .controller('HomeCtrl', ['$scope', '$topicService', '$http',
-  function($scope, $topicService, $http) {
+  .controller('HomeCtrl', ['$scope', '$topicService', '$http', '$resourceService',
+  function($scope, $topicService, $http, $resourceService) {
 
     // $topicService.getTopics().then(function(data) {
     //   $scope.topics = data
@@ -35,15 +35,19 @@ loreOfControllers
 
     $scope.showTopics = function () {
       $scope.tags = ''
-      console.log('showTopics')
       $scope.topicsVisible = true
       $scope.tagsVisible = false
 
-      $scope.getImage = function () {
-        return {
-          'background-image': 'url(/images/topic-space-bg.png)'
-        }
-      }
+      // $scope.getImage = function () {
+      //   return {
+      //     'background-image': 'url(/images/topic-space-bg.png)'
+      //   }
+      // }
     }
 
+    var query = {topicSlug: 'moon'}
+    $resourceService.getResources(query).then(function(data) {
+      console.log(data)
+      $scope.resources = data
+    })
   }])
