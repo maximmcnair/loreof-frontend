@@ -4,7 +4,7 @@
   background-position bottom
   height 550px
   .content
-    padding 100px 0px 0px 0px
+    padding 220px 0px 0px 0px
     width 600px
     margin 0 auto
     position relative
@@ -12,10 +12,13 @@
 .topicSelect-topics
   padding 20px 0px
   text-align center
+  opacity 0
+  animation fadeIn 1s 1.5s
+  animation-fill-mode forwards
   .btn
     margin 10px 10px
-    &:hover
-      color #062158
+    // &:hover
+    //   color #062158
 
 .topicSelect-title
   font-size 240px
@@ -27,8 +30,12 @@
   color #ffffff
   position fixed
   width 100%
-  top 220px
-  color #17191C
+  top 170px
+  color #24282C
+  color #1F2427
+  opacity 0
+  animation fadeIn 1.5s .2s
+  animation-fill-mode forwards
 
 .topicSelect-intro
   text-align center
@@ -38,6 +45,9 @@
   margin 10px 0px
   font-size 37px
   line-height 45px
+  opacity 0
+  animation fadeIn 1s 1s
+  animation-fill-mode forwards
 
 .topicSelect-viewAll
   text-decoration dotted
@@ -45,8 +55,13 @@
     text-decoration underline
 
 .topicSelect-backToTopics
-  color #ffffff
   font-size 16px
   font-family $secondaryTypeface
   text-align center
   display block
+  cursor pointer
+  margin-top 10px
+  color #8A8A8A
+  transition all .4s
+  &:hover
+    color #ffffff
