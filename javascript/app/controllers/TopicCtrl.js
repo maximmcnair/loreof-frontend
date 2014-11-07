@@ -20,12 +20,11 @@ loreOfControllers
     })
 
     // $http(
-    //   { url: apiURl + '/api/v1/resource'
+    //   { url: 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=50&q=stackoverflow&key=AIzaSyBh6KBI0EcZzGk16Rt1P7qZzgKvKTngUno'
     //   , method: 'GET'
-    //   , params: {topicSlug: 'bitcoin'}
     //   })
-    //   .success(function (topics) {
-    //     deferred.resolve(topics)
+    //   .success(function (reponse) {
+    //     console.log(reponse)
     //   })
 
     // $http.get(apiURl + '/api/topic/internet')

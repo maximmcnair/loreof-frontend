@@ -5,7 +5,7 @@ angular.module('loreof.directives', [])
     , templateUrl: '/partials/components/resource-preview.html'
     // , tempalteUrl: 'resource-preview.html'
     , controller: function ($scope) {
-        $scope.thumbs = $mediaService.getThumbnail($scope.resource.trailer)
+        // $scope.thumbs = $mediaService.getThumbnail($scope.resource.trailer)
       }
     , link: function ($scope) {
       }

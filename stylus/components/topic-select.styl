@@ -1,11 +1,60 @@
 .topicSelect
-  background #53606c url('/images/topic-select.png')
+  background-color #53606c
   background-attachment fixed
+  height 550px
   .content
-    padding 50px 0px
+    padding 100px 0px 0px 0px
+    width 600px
+    margin 0 auto
+    z-index: 2;
+    position: relative;
 
 .topicSelect-topics
   padding 20px 0px
   text-align center
   .btn
     margin 10px 10px
+    &:hover
+      color #062158
+
+.topicSelect-title
+  font-size: 240px;
+  font-family: "lust", "adobe-caslon-pro", serif;
+  font-weight: 400;
+  font-style normal
+  text-align: center;
+  // margin-bottom: -190px;
+  // margin-top: 20px;
+  // position: fixed;
+  display: block;
+  // width: 100%;
+  // top: 40px;
+  color: #ffffff;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 220px;
+  // color: rgba(255, 255, 255, 0.2);
+  // color: rgba(0, 0, 0, 0.2);
+  color #17191C
+
+.topicSelect-intro
+  text-align center
+  color #ffffff
+  font-size 26px
+  font-style italic
+  margin 10px 0px
+  font-size: 37px;
+  line-height: 45px;
+
+.topicSelect-viewAll
+  text-decoration dotted
+  &:hover
+    text-decoration underline
+
+.topicSelect-backToTopics
+  color #ffffff
+  font-size 16px
+  font-family $secondaryTypeface
+  text-align center
+  display block

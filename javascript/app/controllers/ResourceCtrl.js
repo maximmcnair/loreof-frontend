@@ -9,13 +9,24 @@ loreOfControllers
     $resourceService.getResource($routeParams.id).then(function(data) {
       $scope.resource = data
 
-      if($mediaService.isValidYoutube($scope.resource.trailer)){
-        $scope.video = $mediaService.getYoutubeSrc($scope.resource.trailer)
-      } else if ($mediaService.isValidVimeo($scope.resource.trailer)) {
-        $scope.video = $mediaService.getVimeoSrc($scope.resource.trailer)
+      if($scope.resource.trailer){
+        if($mediaService.isValidYoutube($scope.resource.trailer)){
+          $scope.video = $mediaService.getYoutubeSrc($scope.resource.trailer)
+        } else if ($mediaService.isValidVimeo($scope.resource.trailer)) {
+          $scope.video = $mediaService.getVimeoSrc($scope.resource.trailer)
+        } else {
+          $scope.video = ''
+        }
       } else {
-        $scope.video = ''
+        if($mediaService.isValidYoutube($scope.resource.video)){
+          $scope.video = $mediaService.getYoutubeSrc($scope.resource.video)
+        } else if ($mediaService.isValidVimeo($scope.resource.video)) {
+          $scope.video = $mediaService.getVimeoSrc($scope.resource.video)
+        } else {
+          $scope.video = ''
+        }
       }
+
     })
 
 

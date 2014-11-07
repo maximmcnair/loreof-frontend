@@ -1,40 +1,121 @@
 var topicFixture =
-  [ { title: 'Bitcoin'
-    , slug: 'bitcoin'
-    , id: '53f37d1fe480b5fcd1172915'
+  [ { title: 'Science'
+    , tags:
+      [ { title: 'Gravity'
+        }
+      , { title: 'Biology'
+        }
+      , { title: 'Chemistry'
+        }
+      , { title: 'Light'
+        }
+      , { title: 'Physics'
+        }
+      , { title: 'Big Bang'
+        }
+      , { title: 'Evolution'
+        }
+      ]
     }
-  // [ { title: 'Wildlife'
-  //   }
-  // , { title: 'Science'
-  //   }
-  // , { title: 'Technology'
-  //   }
-  // , { title: 'Philosophy'
-  //   }
-  // , { title: 'Architecture'
-  //   }
-  // , { title: 'Art'
-  //   }
-  // , { title: 'Design'
-  //   }
-  // , { title: 'Astronomy'
-  //   }
-  // , { title: 'Space'
-  //   }
-  // , { title: 'Nature'
-  //   }
-  // , { title: 'Climate Change'
-  //   }
-  // , { title: 'Politics'
-  //   }
-  // , { title: 'Religion'
-  //   }
-  // , { title: 'Drugs'
-  //   }
-  // , { title: 'History'
-  //   }
-  // , { title: 'Sports'
-  //   }
-  // , { title: 'Speeches'
-  //   }
+  , { title: 'Space'
+    , bg: '/images/topic-space-bg.png'
+    , tags:
+      [ { title: 'Nasa'
+        }
+      , { title: 'Planets'
+        }
+      , { title: 'Moons'
+        }
+      , { title: 'Solar System'
+        }
+      , { title: 'Space Race'
+        }
+      ]
+    }
+  , { title: 'Technology'
+    , tags:
+      [ { title: 'Bitcoin'
+        }
+      , { title: 'Drones'
+        }
+      , { title: 'Internet'
+        }
+      , { title: 'Singularity'
+        }
+      ]
+    }
+  , { title: 'Sport'
+    , tags:
+      [ { title: 'Climbing'
+        }
+      , { title: 'Gaming'
+        }
+      , { title: 'Skateboarding'
+        }
+      , { title: 'Surfing'
+        }
+      ]
+    }
+  , { title: 'Art & Design'
+    , tags:
+      [ { title: 'Advertising'
+        }
+      , { title: 'Typography'
+        }
+      , { title: 'Design'
+        }
+      , { title: 'Architecture'
+        }
+      , { title: 'Fashion'
+        }
+      , { title: 'Graffiti'
+        }
+      , { title: 'Painting'
+        }
+      , { title: 'Photography'
+        }
+      ]
+    }
+  , { title: 'Nature'
+    , tags:
+      [ { title: 'Bacteria'
+        }
+      , { title: 'Ecosystem'
+        }
+      , { title: 'Volcanoes'
+        }
+      , { title: 'Birds'
+        }
+      , { title: 'Fish'
+        }
+      , { title: 'Oceans'
+        }
+      , { title: 'Dolphins'
+        }
+      ]
+    }
+  , { title: 'Social Issues'
+    , tags:
+      [ { title: 'Climate Change'
+        }
+      , { title: 'Sustainability'
+        }
+      , { title: 'Occupy'
+        }
+      , { title: 'Animal Rights'
+        }
+      ]
+    }
+  , { title: 'Religion'
+    , tags:
+      [ { title: 'Buddhism'
+        }
+      , { title: 'Christianity'
+        }
+      , { title: 'Hinduism'
+        }
+      , { title: 'Scientology'
+        }
+      ]
+    }
   ]
