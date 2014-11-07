@@ -1,12 +1,13 @@
-section.topicSelect
+section(ng-style="getImage()").topicSelect
+  h1.topicSelect-title Lore Of
   .content
-    h1.topicSelect-title
+    h2.topicSelect-intro
       | Learn about a topic from people's suggested 
       br
       | documentaries, short videos & talks.
 
     div(ng-show="topicsVisible")
-      h3.topicSelect-subtitle Pick a topic
+      //- h3.topicSelect-subtitle Pick a topic
       .topicSelect-topics
         //- a(ng-repeat="topic in topics", ng-bind="topic.title", ng-href="/topic/{{topic.slug}}").btn
         a(ng-repeat="topic in topics", ng-bind="topic.title", ng-click="showTags(topic)").btn
@@ -29,8 +30,6 @@ section.topicSelect
         //- a.btn Sports
 
     div(ng-show="tagsVisible")
-      h3.topicSelect-subtitle Select some tags
-      a.topicSelect-viewAll or view everything uploaded for this topic
       .topicSelect-topics
         a(ng-repeat="tag in tags", ng-bind="tag.title").btn
       a(ng-click="showTopics()").topicSelect-backToTopics Back to topics

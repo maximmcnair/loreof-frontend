@@ -5,6 +5,13 @@ loreOfControllers
     // $topicService.getTopics().then(function(data) {
     //   $scope.topics = data
     // })
+  // url('/images/topic-space-bg.png')
+
+    $scope.getImage = function () {
+      return {
+        'background-image': 'url(/images/topic-space-bg.png)'
+      }
+    }
 
     $scope.topics = topicFixture
     $scope.tags
@@ -18,6 +25,12 @@ loreOfControllers
 
       $scope.topicsVisible = false
       $scope.tagsVisible = true
+
+      $scope.getImage = function () {
+        return {
+          'background-image': 'url(/images/topic-climate-change-bg.png)'
+        }
+      }
     }
 
     $scope.showTopics = function () {
@@ -25,6 +38,12 @@ loreOfControllers
       console.log('showTopics')
       $scope.topicsVisible = true
       $scope.tagsVisible = false
+
+      $scope.getImage = function () {
+        return {
+          'background-image': 'url(/images/topic-space-bg.png)'
+        }
+      }
     }
 
   }])

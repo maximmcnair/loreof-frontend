@@ -18,6 +18,7 @@ var topicFixture =
       ]
     }
   , { title: 'Space'
+    , bg: '/images/topic-space-bg.png'
     , tags:
       [ { title: 'Nasa'
         }
