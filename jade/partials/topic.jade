@@ -1,8 +1,7 @@
 //- include ../components/current-selection
-
-//- .topicSelect
-//-   .content
-//-     h1(ng-bind="topic.title")
+section(ng-style="getImage()").topicSelect
+  .content
+    h2(ng-bind="topic.title").topicSelect-intro
 
 .resources
   .content
