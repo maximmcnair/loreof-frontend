@@ -5,15 +5,21 @@ function toTitleCase(str){
 }
 
 loreOfControllers
-  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams',
-  function($scope, $resourceService, $http, $routeParams) {
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams', '$location',
+  function($scope, $resourceService, $http, $routeParams, $location) {
 
     $scope.topic =
         { slug: $routeParams.topic
         , title: toTitleCase($routeParams.topic.replace('-', ' '))
         }
 
-    var query = {topicSlug: $routeParams.topic}
+    var query =
+      { topicSlug: $routeParams.topic
+      , tags: $location.search()['tags']
+      }
+
+    console.log( $location.search()['tags'] )
+
     $resourceService.getResources(query).then(function(data) {
       console.log(data)
       $scope.resources = data

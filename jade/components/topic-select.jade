@@ -30,5 +30,5 @@ section(ng-style="getImage()").topicSelect
           //- a.btn Sports
 
       div(ng-show="tagsVisible")
-        a(ng-repeat="tag in tags", ng-bind="tag.title").btn
+        a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}?tags={{tag.slug}}").btn
         a(ng-click="showTopics()").topicSelect-backToTopics Back to Topics

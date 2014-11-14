@@ -119,6 +119,6 @@ gulp.task('watch',
   , 'jade'
   , 'js:build:plugins'
   , 'js:build:app'
-  // , 'js:test-watch'
+  , 'js:test-watch'
   , 'images'
   , 'watchfiles'])
