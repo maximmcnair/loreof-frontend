@@ -4,8 +4,8 @@
 //-   .content
 //-     h1(ng-bind="topic.title")
 
-.content
-  .resources
+.resources
+  .content
     //- h2.resources-title Not sure of a topic? Here’s some stuff to get you started.
 
     a(resource, ng-repeat="resource in resources", ng-href="/resource/{{resource._id}}").resourcePreview
