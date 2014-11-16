@@ -5,6 +5,7 @@ var apiURl = 'http://localhost:4002'
     , 'loreof.controllers'
     , 'loreof.services'
     , 'loreof.directives'
+    , 'seo'
     ])
     .config(function($routeProvider, $sceDelegateProvider, $locationProvider) {
       // use the HTML5 History API

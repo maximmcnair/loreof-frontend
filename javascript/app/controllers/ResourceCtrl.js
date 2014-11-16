@@ -27,6 +27,7 @@ loreOfControllers
         }
       }
 
+      $scope.htmlReady()
     })
 
 

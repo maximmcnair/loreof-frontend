@@ -23,6 +23,7 @@ loreOfControllers
     $resourceService.getResources(query).then(function(data) {
       console.log(data)
       $scope.resources = data
+      $scope.htmlReady()
     })
 
     // $http(

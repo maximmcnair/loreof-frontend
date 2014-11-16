@@ -4,6 +4,7 @@ loreOfControllers
 
     $topicService.getTopics().then(function(data) {
       $scope.topics = data
+      $scope.htmlReady()
     })
 
     // $scope.getImage = function () {
