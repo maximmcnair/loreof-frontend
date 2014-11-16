@@ -10,7 +10,7 @@ loreOfControllers
 
     $scope.topic =
         { slug: $routeParams.topic
-        , title: toTitleCase($routeParams.topic.replace('-', ' '))
+        , title: toTitleCase($routeParams.topic.replace(/-/g, ' '))
         }
 
     var query =
