@@ -46,9 +46,9 @@ loreOfControllers
       // }
     }
 
-    var query = {topicSlug: 'climate-change'}
-    $resourceService.getResources(query).then(function(data) {
-      console.log(data)
-      $scope.resources = data
-    })
+    // var query = {topicSlug: 'climate-change'}
+    // $resourceService.getResources(query).then(function(data) {
+    //   console.log(data)
+    //   $scope.resources = data
+    // })
   }])
