@@ -15,6 +15,7 @@ module.exports =
     // Application
     [ __dirname + '/javascript/app/app.js'
     // Controllers
+    , __dirname + '/javascript/app/controllers/HeadCtrl.js'
     , __dirname + '/javascript/app/controllers/HomeCtrl.js'
     , __dirname + '/javascript/app/controllers/TopicCtrl.js'
     , __dirname + '/javascript/app/controllers/ResourceCtrl.js'
@@ -22,8 +23,10 @@ module.exports =
     , __dirname + '/javascript/app/services/topicService.js'
     , __dirname + '/javascript/app/services/resourceService.js'
     , __dirname + '/javascript/app/services/mediaService.js'
+    , __dirname + '/javascript/app/services/metaService.js'
     // Directives
     , __dirname + '/javascript/app/directives/resourceDirective.js'
+    , __dirname + '/javascript/app/directives/contentDirective.js'
     ]
   , test:
     [ __dirname + '/javascript/lib/angular-mocks.js'

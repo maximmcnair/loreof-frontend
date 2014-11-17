@@ -1,16 +1,23 @@
 loreOfControllers
-  .controller('HomeCtrl', ['$scope', '$topicService', '$http', '$resourceService',
-  function($scope, $topicService, $http, $resourceService) {
+  .controller('HomeCtrl', ['$scope', '$topicService', '$http', '$resourceService', '$metaService',
+  function($scope, $topicService, $http, $resourceService, $metaService) {
+    /*
+     * Meta Data
+     */
+    $metaService.setMeta('pageTitle', 'Home | Lore Of')
 
+
+    /*
+     * Get topics
+     */
     $topicService.getTopics().then(function(data) {
       $scope.topics = data
       // SEO REQUIREMENT:
       // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
       // we are finished with this controller.
-      console.log(data)
+      // console.log(data)
       $scope.htmlReady()
     })
-    console.log('$scope.htmlReady()')
 
     // $scope.getImage = function () {
     //   return {
