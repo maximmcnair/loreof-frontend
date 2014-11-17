@@ -21,8 +21,10 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
-    "start": "gulp",
-    "test": "./node_modules/karma/bin/karma start"
+    "build": "gulp",
+    "server": "node server.js",
+    "test": "./node_modules/karma/bin/karma start",
+    "seo": "phantomjs --disk-cache=no angular-seo-server.js 8888 http://localhost:5230/"
   },
   "contributors": [
     {
