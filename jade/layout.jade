@@ -1,7 +1,7 @@
 doctype html
 html(ng-app="loreof")
   head(ng-controller="HeadCtrl")
-    title {{ metaData.getMeta('pageTitle') }}
+    title(ng-bind="metaData.getMeta('pageTitle')")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0")
 
     link(rel='stylesheet', href='/css/style.css')
@@ -28,14 +28,12 @@ html(ng-app="loreof")
     <!-- Open Graph / Facebook Meta -->
     meta(property="og:type", content="website")
     meta(property="og:title", ng-content="{{ metaData.getMeta('facebookTitle') }}")
-    //- <meta property="og:description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
-    //- <meta property="og:url" content="http://fostersevents.co.uk/">
-    //- <meta property="og:image" content="http://fostersevents.co.uk/wp-content/uploads/2014/01/fb_img.jpg">
+    meta(property="og:description", ng-content="{{ metaData.getMeta('facebookDescription') }}")
+    meta(property="og:url", ng-content="{{ metaData.getMeta('facebookUrl') }}")
+    meta(property="og:image", ng-content="{{ metaData.getMeta('facebookImage') }}")
 
-    //- <!-- Google Meta -->
-    //- <meta name="description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
-    //- <meta name="author" content="Fosters Events">
-    //- <meta name="robots" content="all">
+    <!-- Google Meta -->
+    meta(name="description", content="{{ metaData.getMeta('pageDescription') }}")
 
     base(href="/")
   body
