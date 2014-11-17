@@ -6,6 +6,7 @@ angular.module('loreof.services')
       , twitterTitle: 'twitterTitle'
       , twitterDescription: 'twitterDescription'
       , twitterImage: 'twitterImage'
+      , facebookTitle: 'facebookTitle'
       }
 
     return {

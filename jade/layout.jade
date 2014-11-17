@@ -26,8 +26,8 @@ html(ng-app="loreof")
     meta(name="twitter:image", ng-content="{{ metaData.getMeta('twitterImage') }}")
 
     //- <!-- Facebook Meta -->
-    //- <meta property="og:type" content="website">
-    //- <meta property="og:title" content="Fosters">
+    meta(property="og:type", content="website")
+    meta(property="og:title", ng-content="{{ metaData.getMeta('facebookTitle') }}")
     //- <meta property="og:description" content="Bristol based, bespoke outside event and contract caterer extraordinaire">
     //- <meta property="og:url" content="http://fostersevents.co.uk/">
     //- <meta property="og:image" content="http://fostersevents.co.uk/wp-content/uploads/2014/01/fb_img.jpg">

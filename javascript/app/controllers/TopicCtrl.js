@@ -5,13 +5,20 @@ function toTitleCase(str){
 }
 
 loreOfControllers
-  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams', '$location',
-  function($scope, $resourceService, $http, $routeParams, $location) {
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams', '$location', '$metaService',
+  function($scope, $resourceService, $http, $routeParams, $location, $metaService) {
 
     $scope.topic =
         { slug: $routeParams.topic
         , title: toTitleCase($routeParams.topic.replace(/-/g, ' '))
         }
+
+    /*
+     * Meta Data
+     */
+    $metaService.setMeta('pageTitle', $scope.topic.title + ' | Lore Of')
+    $metaService.setMeta('facebookTitle', $scope.topic.title + ' | Lore Of')
+  
 
     var query =
       { topicSlug: $routeParams.topic
