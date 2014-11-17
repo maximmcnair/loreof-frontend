@@ -1,5 +1,5 @@
 'use strict'
-var apiURl = 'http://localhost:4002'
+var apiURl = 'http://api.loreof.co'
   , app = angular.module('loreof',
     [ 'ngRoute'
     , 'loreof.controllers'

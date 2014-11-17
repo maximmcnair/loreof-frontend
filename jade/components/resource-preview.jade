@@ -10,7 +10,7 @@ div(ng-style="{'background-image': 'url({{resource.thumbs.large}})'}").resourceP
   h3(ng-bind="resource.title").resourcePreview-title
   .resourcePreview-uploaded
     .resourcePreview-uploaded-img
-      img(ng-src="http://localhost:4002/{{resource.uploaded.avatar}}")
+      img(ng-src="http://api.loreof.co/{{resource.uploaded.avatar}}")
     .resourcePreview-uploaded-user
       .resourcePreview-uploaded-user-title Uploaded by
       span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username
