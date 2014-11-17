@@ -24,6 +24,9 @@ var apiURl = 'http://localhost:4002'
           templateUrl: 'partials/resource.html'
         , controller: 'ResourceCtrl'
         })
+        .otherwise({
+          redirectTo: '/'
+        })
 
       $sceDelegateProvider.resourceUrlWhitelist(
         [ 'self'

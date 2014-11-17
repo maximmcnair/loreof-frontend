@@ -4,8 +4,13 @@ loreOfControllers
 
     $topicService.getTopics().then(function(data) {
       $scope.topics = data
+      // SEO REQUIREMENT:
+      // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+      // we are finished with this controller.
+      console.log(data)
       $scope.htmlReady()
     })
+    console.log('$scope.htmlReady()')
 
     // $scope.getImage = function () {
     //   return {
@@ -19,7 +24,6 @@ loreOfControllers
 
     $scope.topicsVisible = true
     $scope.tagsVisible = false
-
 
     $scope.showTags = function (topic) {
       $scope.topic = topic.slug
