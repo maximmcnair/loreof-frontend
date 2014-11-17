@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "dependencies": {
-    "express": "~4.10.1"
+    "express": "~4.10.1",
+    "phantomjs": "~1.9.12"
   },
   "devDependencies": {
     "gulp": "^3.5.6",
