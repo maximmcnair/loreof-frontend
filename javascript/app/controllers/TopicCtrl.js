@@ -25,10 +25,10 @@ loreOfControllers
       , tags: $location.search()['tags']
       }
 
-    console.log( $location.search()['tags'] )
+    // console.log( $location.search()['tags'] )
 
     $resourceService.getResources(query).then(function(data) {
-      console.log(data)
+      // console.log(data)
       $scope.resources = data
 
       // SEO REQUIREMENT: 

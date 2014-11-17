@@ -11,7 +11,6 @@ angular.module('loreof.services')
 
     return {
       getMeta: function(property) {
-        console.log(property, metaData[property])
         return metaData[property]
       }
     , setMeta: function(property, newValue) {
