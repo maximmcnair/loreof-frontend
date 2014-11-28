@@ -24,6 +24,11 @@ var apiURl = 'http://localhost:4002'
           , templateUrl: 'partials/topic.html'
           , controller: 'TopicCtrl'
           })
+        .state('resource',
+          { url: '/resource/:id'
+          , templateUrl: 'partials/resource.html'
+          , controller: 'ResourceCtrl'
+          })
 
 
       // $routeProvider

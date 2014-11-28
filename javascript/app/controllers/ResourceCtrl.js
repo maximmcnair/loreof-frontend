@@ -1,12 +1,12 @@
 loreOfControllers
-  .controller('ResourceCtrl', ['$scope', '$resourceService', '$routeParams', '$mediaService',
-  function($scope, $resourceService, $routeParams, $mediaService) {
+  .controller('ResourceCtrl', ['$scope', '$resourceService', '$stateParams', '$mediaService',
+  function($scope, $resourceService, $stateParams, $mediaService) {
     // $scope.video =
     //  $sce.trustAsHtml('<iframe src="https://www.youtube.com/embed/Bu6SE5TYrCM" frameborder="0" allowfullscreen="allowfullscreen"></iframe>')
 
     // $scope.video = $sce.trustAsHtml('<iframe src="https://www.youtube.com/embed/Bu6SE5TYrCM" frameborder="0" allowfullscreen="allowfullscreen"></iframe>')
 
-    $resourceService.getResource($routeParams.id).then(function(data) {
+    $resourceService.getResource($stateParams.id).then(function(data) {
       $scope.resource = data
 
       if($scope.resource.trailer){
