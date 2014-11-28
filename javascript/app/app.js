@@ -3,6 +3,7 @@
 var apiURl = 'http://localhost:4002'
   , app = angular.module('loreof',
     [ 'ui.router'
+    , 'ngAnimate'
     , 'loreof.controllers'
     , 'loreof.services'
     , 'loreof.directives'
@@ -13,31 +14,15 @@ var apiURl = 'http://localhost:4002'
       $locationProvider.html5Mode(true)
 
       $stateProvider
-        .state('index',
+        .state('home',
           { url: '/'
-          , views:
-            { 'topicNav':
-              { templateUrl: 'partials/topic-select.html'
-              , controller: 'TopicSelectCtrl'
-              }
-            , 'content':
-              { templateUrl: 'partials/home.html'
-              , controller: 'HomeCtrl'
-              }
-            }
+          , templateUrl: 'partials/home.html'
+          , controller: 'HomeCtrl'
           })
         .state('topic',
           { url: '/topic/:topic'
-          , views:
-            { 'topicNav':
-              { templateUrl: 'partials/topic-select.html'
-              , controller: 'TopicSelectCtrl'
-              }
-            , 'content':
-              { templateUrl: 'partials/topic.html'
-              , controller: 'TopicCtrl'
-              }
-            }
+          , templateUrl: 'partials/topic.html'
+          , controller: 'TopicCtrl'
           })
 
 

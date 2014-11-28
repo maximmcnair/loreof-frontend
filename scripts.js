@@ -3,6 +3,7 @@ module.exports =
     // dependencies
     [ __dirname + '/javascript/lib/angular.js'
     , __dirname + '/javascript/lib/angular-ui-router.js'
+    , __dirname + '/javascript/lib/angular-animate.js'
     , __dirname + '/javascript/lib/angular-sanitize.js'
     , __dirname + '/javascript/lib/angular-seo.js'
     ]
