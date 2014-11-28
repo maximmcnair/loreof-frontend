@@ -18,6 +18,7 @@ var apiURl = 'http://localhost:4002'
           , views:
             { 'topicNav':
               { templateUrl: 'partials/topic-select.html'
+              , controller: 'TopicSelectCtrl'
               }
             , 'content':
               { templateUrl: 'partials/home.html'
@@ -30,6 +31,7 @@ var apiURl = 'http://localhost:4002'
           , views:
             { 'topicNav':
               { templateUrl: 'partials/topic-select.html'
+              , controller: 'TopicSelectCtrl'
               }
             , 'content':
               { templateUrl: 'partials/topic.html'

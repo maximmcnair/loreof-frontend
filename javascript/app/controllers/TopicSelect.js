@@ -1,5 +1,9 @@
 loreOfControllers
-  .controller('TopicSelectCtrl', ['$scope', '$resourceService', '$routeParams', '$mediaService',
-  function($scope, $resourceService, $routeParams, $mediaService) {
-    console.log($scope)
+  .controller('TopicSelectCtrl', ['$scope', '$stateParams', '$location',
+  function($scope, $stateParams, $location) {
+    if($location.$$path.indexOf('topic') === 1){
+      $scope.topicSelected = true
+    } else {
+      $scope.topicSelected = false
+    }
   }])
