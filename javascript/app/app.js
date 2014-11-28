@@ -1,32 +1,60 @@
 'use strict'
-var apiURl = 'http://api.loreof.co'
+// var apiURl = 'http://api.loreof.co'
+var apiURl = 'http://localhost:4002'
   , app = angular.module('loreof',
-    [ 'ngRoute'
+    [ 'ui.router'
     , 'loreof.controllers'
     , 'loreof.services'
     , 'loreof.directives'
     , 'seo'
     ])
-    .config(function($routeProvider, $sceDelegateProvider, $locationProvider) {
+    .config(function($stateProvider, $sceDelegateProvider, $locationProvider) {
       // use the HTML5 History API
       $locationProvider.html5Mode(true)
 
-      $routeProvider
-        .when('/', {
-          templateUrl: 'partials/home.html'
-        , controller: 'HomeCtrl'
-        })
-        .when('/topic/:topic', {
-          templateUrl: 'partials/topic.html'
-        , controller: 'TopicCtrl'
-        })
-        .when('/resource/:id', {
-          templateUrl: 'partials/resource.html'
-        , controller: 'ResourceCtrl'
-        })
-        .otherwise({
-          redirectTo: '/'
-        })
+      $stateProvider
+        .state('index',
+          { url: '/'
+          , views:
+            { 'topicNav':
+              { templateUrl: 'partials/topic-select.html'
+              }
+            , 'content':
+              { templateUrl: 'partials/home.html'
+              , controller: 'HomeCtrl'
+              }
+            }
+          })
+        .state('topic',
+          { url: '/topic/:topic'
+          , views:
+            { 'topicNav':
+              { templateUrl: 'partials/topic-select.html'
+              }
+            , 'content':
+              { templateUrl: 'partials/topic.html'
+              , controller: 'TopicCtrl'
+              }
+            }
+          })
+
+
+      // $routeProvider
+      //   .when('/', {
+      //     templateUrl: 'partials/home.html'
+      //   , controller: 'HomeCtrl'
+      //   })
+      //   .when('/topic/:topic', {
+      //     templateUrl: 'partials/topic.html'
+      //   , controller: 'TopicCtrl'
+      //   })
+      //   .when('/resource/:id', {
+      //     templateUrl: 'partials/resource.html'
+      //   , controller: 'ResourceCtrl'
+      //   })
+      //   .otherwise({
+      //     redirectTo: '/'
+      //   })
 
       $sceDelegateProvider.resourceUrlWhitelist(
         [ 'self'

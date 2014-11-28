@@ -2,7 +2,7 @@ module.exports =
   { plugins:
     // dependencies
     [ __dirname + '/javascript/lib/angular.js'
-    , __dirname + '/javascript/lib/angular-route.js'
+    , __dirname + '/javascript/lib/angular-ui-router.js'
     , __dirname + '/javascript/lib/angular-sanitize.js'
     , __dirname + '/javascript/lib/angular-seo.js'
     ]
@@ -18,6 +18,7 @@ module.exports =
     , __dirname + '/javascript/app/controllers/HeadCtrl.js'
     , __dirname + '/javascript/app/controllers/HomeCtrl.js'
     , __dirname + '/javascript/app/controllers/TopicCtrl.js'
+    , __dirname + '/javascript/app/controllers/TopicSelect.js'
     , __dirname + '/javascript/app/controllers/ResourceCtrl.js'
     // Services
     , __dirname + '/javascript/app/services/topicService.js'

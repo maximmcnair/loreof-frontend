@@ -40,7 +40,7 @@ describe('Unit: TopicCtrl', function () {
     $controller('TopicCtrl',
       { $scope: scope
       , $resourceService: $resourceService
-      , $routeParams: {topic: 'wildlife'}
+      , $stateParams: {topic: 'wildlife'}
       })
 
     scope.$digest()

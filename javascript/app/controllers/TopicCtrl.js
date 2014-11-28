@@ -5,12 +5,12 @@ function toTitleCase(str){
 }
 
 loreOfControllers
-  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$routeParams', '$location', '$metaService',
-  function($scope, $resourceService, $http, $routeParams, $location, $metaService) {
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$stateParams', '$location', '$metaService',
+  function($scope, $resourceService, $http, $stateParams, $location, $metaService) {
 
     $scope.topic =
-        { slug: $routeParams.topic
-        , title: toTitleCase($routeParams.topic.replace(/-/g, ' '))
+        { slug: $stateParams.topic
+        , title: toTitleCase($stateParams.topic.replace(/-/g, ' '))
         }
 
     /*
@@ -18,17 +18,15 @@ loreOfControllers
      */
     $metaService.setMeta('pageTitle', $scope.topic.title + ' | Lore Of')
     $metaService.setMeta('facebookTitle', $scope.topic.title + ' | Lore Of')
-  
 
     var query =
-      { topicSlug: $routeParams.topic
+      { topicSlug: $stateParams.topic
       , tags: $location.search()['tags']
       }
 
     // console.log( $location.search()['tags'] )
 
     $resourceService.getResources(query).then(function(data) {
-      // console.log(data)
       $scope.resources = data
 
       // SEO REQUIREMENT: 
