@@ -8,4 +8,4 @@ include ../components/current-selection
   .content
     //- h2.resources-title Not sure of a topic? Here’s some stuff to get you started.
 
-    a(resource, ng-repeat="resource in resources", ng-href="/resource/{{resource._id}}").resourcePreview
+    a(resource, ng-repeat="resource in resources", ui-sref="resource({id: resource._id})").resourcePreview
