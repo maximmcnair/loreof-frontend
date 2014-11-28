@@ -1,7 +1,7 @@
 .currentSelection
   .content
-    span.currentSelection-title Areas
-    a.currentSelection-label.label Space Exploration
-    a.currentSelection-label.label Space Travel
+    //- span.currentSelection-title Areas
+    h2(ng-bind="topic.title").currentSelection-topic
+    a(ng-repeat="tag in topic.tags track by $index", ng-bind="tag").currentSelection-label.label
 
     a.currentSelection-update.btn.btn-sm Update Areas

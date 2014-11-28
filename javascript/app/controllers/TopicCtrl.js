@@ -7,10 +7,21 @@ function toTitleCase(str){
 loreOfControllers
   .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$stateParams', '$location', '$metaService',
   function($scope, $resourceService, $http, $stateParams, $location, $metaService) {
+    console.log( $location.search()['tags'])
+    /*
+     * Tags
+     */
+    var tagsRaw = [].concat( $location.search()['tags'] )
+      , tagsFormatted = []
+
+    angular.forEach(tagsRaw, function (tag) {
+      tagsFormatted.push( toTitleCase(tag.replace(/-/g, ' ')) )
+    })
 
     $scope.topic =
         { slug: $stateParams.topic
         , title: toTitleCase($stateParams.topic.replace(/-/g, ' '))
+        , tags: tagsFormatted
         }
 
     /*
@@ -21,7 +32,7 @@ loreOfControllers
 
     var query =
       { topicSlug: $stateParams.topic
-      , tags: $location.search()['tags']
+      , tags: $scope.topic.tags
       }
 
     // console.log( $location.search()['tags'] )
