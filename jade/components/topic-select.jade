@@ -7,8 +7,8 @@ section(ng-style="getImage()").topicSelect
 
     .topicSelect-topics
       div(ng-show="topicsVisible")
-        //- a(ng-repeat="topic in topics", ng-bind="topic.title", ng-click="showTags(topic)").btn
-        a(ng-repeat="topic in topics", ng-bind="topic.title", href="/topic/{{topic.slug}}").btn
+        a(ng-repeat="topic in topics", ng-bind="topic.title", ng-click="showTags(topic)").btn
+        //- a(ng-repeat="topic in topics", ng-bind="topic.title", href="/topic/{{topic.slug}}").btn
         //- h3.topicSelect-subtitle Pick a topic
           //- a(ng-repeat="topic in topics", ng-bind="topic.title", ng-href="/topic/{{topic.slug}}").btn
           //- a.btn Technology
@@ -30,6 +30,6 @@ section(ng-style="getImage()").topicSelect
           //- a.btn Sports
 
       div(ng-show="tagsVisible")
-        //- a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}?tags={{tag.slug}}").btn
-        a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}").btn
+        a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}?tags={{tag.slug}}").btn
+        //- a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}").btn
         a(ng-click="showTopics()").topicSelect-backToTopics Back to Topics
