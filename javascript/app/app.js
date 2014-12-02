@@ -3,6 +3,7 @@
 var apiURl = 'http://localhost:4002'
   , app = angular.module('loreof',
     [ 'ui.router'
+    , 'ct.ui.router.extras'
     , 'ui.bootstrap'
     , 'ngAnimate'
     , 'loreof.controllers'
@@ -40,26 +41,10 @@ var apiURl = 'http://localhost:4002'
         //           resourceId: function() { return $stateParams.id }
         //         }
         //       , controller: 'ResourceCtrl'
+        //       , backdrop: true
         //       })
         //     }]
         //   })
-
-      // $routeProvider
-      //   .when('/', {
-      //     templateUrl: 'partials/home.html'
-      //   , controller: 'HomeCtrl'
-      //   })
-      //   .when('/topic/:topic', {
-      //     templateUrl: 'partials/topic.html'
-      //   , controller: 'TopicCtrl'
-      //   })
-      //   .when('/resource/:id', {
-      //     templateUrl: 'partials/resource.html'
-      //   , controller: 'ResourceCtrl'
-      //   })
-      //   .otherwise({
-      //     redirectTo: '/'
-      //   })
 
       $sceDelegateProvider.resourceUrlWhitelist(
         [ 'self'

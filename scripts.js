@@ -6,6 +6,7 @@ module.exports =
     , __dirname + '/javascript/lib/angular-animate.js'
     , __dirname + '/javascript/lib/angular-sanitize.js'
     , __dirname + '/javascript/lib/angular-seo.js'
+    , __dirname + '/javascript/lib/ct-ui-router-extras.js'
     , __dirname + '/javascript/lib/ui-bootstrap-custom-0.12.0.js'
     ]
   , fixtures:
@@ -38,7 +39,6 @@ module.exports =
     , __dirname + '/javascript/tests/unit/controllers/ResourceCtrl.js'
     , __dirname + '/javascript/tests/unit/services/topicService.js'
     , __dirname + '/javascript/tests/unit/services/resourceService.js'
-    , __dirname + '/javascript/tests/unit/services/mediaService.js'
     , __dirname + '/javascript/tests/unit/directives/resourceDirective.js'
     ]
   }
