@@ -11,7 +11,8 @@ describe('Unit: $resourceService', function () {
   beforeEach(inject(function ($resourceService, _$httpBackend_) {
     service = $resourceService
     $httpBackend = _$httpBackend_
-    // mock partials/home ^hack
+    // mock partials/app ^hack
+    $httpBackend.whenGET('partials/app.html').respond('')
     $httpBackend.whenGET('partials/home.html').respond('')
   }))
 

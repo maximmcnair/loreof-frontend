@@ -11,17 +11,28 @@ var apiURl = 'http://localhost:4002'
     , 'loreof.directives'
     , 'seo'
     ])
-    .config(function($stateProvider, $sceDelegateProvider, $locationProvider) {
+    .config(function($stateProvider, $sceDelegateProvider, $locationProvider, $urlRouterProvider) {
       // use the HTML5 History API
       $locationProvider.html5Mode(true)
+      $urlRouterProvider.otherwise('/')
 
       $stateProvider
-        .state('home',
+        .state('app',
+          { url: ''
+          , abstract: true
+          , sticky: true
+          , views:
+            { app:
+              { templateUrl: 'partials/app.html'
+              }
+            }
+          })
+        .state('app.home',
           { url: '/'
           , templateUrl: 'partials/home.html'
           , controller: 'HomeCtrl'
           })
-        .state('topic',
+        .state('app.topic',
           { url: '/topic/:topic'
           , templateUrl: 'partials/topic.html'
           , controller: 'TopicCtrl'

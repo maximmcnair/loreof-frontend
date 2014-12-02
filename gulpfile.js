@@ -24,6 +24,9 @@ var defaultPaths =
       [ { location: './jade/partials/home.jade'
         , name: 'home.html'
         }
+      , { location: './jade/partials/app.jade'
+        , name: 'app.html'
+        }
       , { location: './jade/partials/topic-select.jade'
         , name: 'topic-select.html'
         }
