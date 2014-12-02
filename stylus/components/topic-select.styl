@@ -1,7 +1,8 @@
 .topicSelect
   background #53606c url('/images/topic-select.png')
   background-attachment fixed
-  min-height 500px
+  min-height 600px
+  padding-top 10px
   color #ffffff
   .content
     padding 50px 0px
@@ -9,9 +10,10 @@
 .topicSelect-topics
   padding 20px 0px
   text-align center
+  margin 0 auto
+  width 750px
   .btn
     margin 10px 10px
-
 
 // .topicSelect
 //   // background-color #53606c
@@ -24,13 +26,33 @@
 //     margin 0 auto
 //     position relative
 
+.topicSelect-title
+  font-size 70px
+  font-family "lust", "adobe-caslon-pro", serif
+  font-weight 400
+  font-style normal
+  text-align center
+  display block
+  color #17191C
+  opacity 0
+  animation fadeIn .2s
+  animation-fill-mode forwards
+  color: #121212;
+  font-size: 160px;
+  position fixed
+  top 100px
+  width 100%
+  line-height: 160px;
+
 .topicSelect-topics
   padding 20px 0px
   text-align center
   opacity 0
   animation fadeIn 1s .5s
   animation-fill-mode forwards
-//   .btn
+  .btn
+    color: #8A8A8A;
+    border: 2px solid #575757;
 //     margin 10px 10px
 //     // &:hover
 //     //   color #062158
@@ -46,6 +68,9 @@
   opacity 0
   animation fadeIn .5s 0s
   animation-fill-mode forwards
+  padding-top: 150px;
+
+
 
 // .topicSelect-viewAll
 //   text-decoration dotted
