@@ -1,12 +1,12 @@
 loreOfControllers
-  .controller('ResourceCtrl', ['$scope', '$resourceService', '$stateParams', '$mediaService',
-  function($scope, $resourceService, $stateParams, $mediaService) {
+  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', '$modalInstance', 'resourceId',
+  function($scope, $resourceService, $mediaService, $modalInstance, resourceId) {
     // $scope.video =
     //  $sce.trustAsHtml('<iframe src="https://www.youtube.com/embed/Bu6SE5TYrCM" frameborder="0" allowfullscreen="allowfullscreen"></iframe>')
 
     // $scope.video = $sce.trustAsHtml('<iframe src="https://www.youtube.com/embed/Bu6SE5TYrCM" frameborder="0" allowfullscreen="allowfullscreen"></iframe>')
 
-    $resourceService.getResource($stateParams.id).then(function(data) {
+    $resourceService.getResource(resourceId).then(function(data) {
       $scope.resource = data
 
       if($scope.resource.trailer){
@@ -33,6 +33,9 @@ loreOfControllers
       $scope.htmlReady()
     })
 
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 
 
   }])

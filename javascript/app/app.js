@@ -3,6 +3,7 @@
 var apiURl = 'http://localhost:4002'
   , app = angular.module('loreof',
     [ 'ui.router'
+    , 'ui.bootstrap'
     , 'ngAnimate'
     , 'loreof.controllers'
     , 'loreof.services'
@@ -24,12 +25,24 @@ var apiURl = 'http://localhost:4002'
           , templateUrl: 'partials/topic.html'
           , controller: 'TopicCtrl'
           })
-        .state('resource',
-          { url: '/resource/:id'
-          , templateUrl: 'partials/resource.html'
-          , controller: 'ResourceCtrl'
-          })
-
+        // .state('resource',
+        //   { url: '/resource/:id'
+        //   , templateUrl: 'partials/resource.html'
+        //   , controller: 'ResourceCtrl'
+        //   })
+        // .state('resource',
+        //   { url: '/resource/:id'
+        //   , onEnter: ['$stateParams', '$state', '$modal', '$resourceService',
+        //     function($stateParams, $state, $modal, $resourceService) {
+        //       $modal.open({
+        //         templateUrl: 'partials/resource.html'
+        //       , resolve: {
+        //           resourceId: function() { return $stateParams.id }
+        //         }
+        //       , controller: 'ResourceCtrl'
+        //       })
+        //     }]
+        //   })
 
       // $routeProvider
       //   .when('/', {

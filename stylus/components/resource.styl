@@ -1,11 +1,10 @@
-.resource-video-wrapper
-  background #1b1f23
-  clearfix()
-
-.resource-video
-  max-width 640px
-  margin 0 auto
-  position relative
+.resourceModal
+  position fixed
+  top 50px
+  width 90%
+  margin-left 20px
+  background #F7F7F7
+  z-index 2000
 
 .resource-embed
   position relative
@@ -24,48 +23,111 @@
     width 100%
     height 100%
 
-.resource-vote
-  padding 10px 0px
-  text-align right
-  span
-    font-size 13px
-    color #f7f7f7
-    font-family $secondaryTypeface
-    font-style italic
-    display inline
-    margin-bottom 10px
-    margin-right 10px
-  .btn
-    background #557cd2
-    color #f7f7f7
-    font-size 14px
-    font-weight 600
-    border none
-    font-style normal
-    border-radius 5px
-    font-family $secondaryTypeface
-
-@media screen and (max-width: 650px)
-  .resource-vote
-    margin-right 10px
-
-@media screen and (min-width: 960px)
-  .resource-vote
-    text-align left
-    position absolute
-    bottom 10px
-    right 0px
-    transform translate3d(100%, 0, 0)
-    padding 0px 0px 0px 10px
-    span
-      display block
-      margin-right 0px
-
+.resource-desc
+  padding 10px
 
 .resource-title
   text-align left
-  font-size 39px
-  margin 25px 0px 10px 0px
+  font-family $primaryTypeface
+  font-size 30px
+  color #1b1a16
+  font-size 30px
+  font-weight 800
 
-.resource-desc
-  margin 15px 0px 15px 0px
+.resource-label
+  margin-bottom 10px
+
+.resource-external
+  width 210px
+  display block
+  margin 15px 0 15px 0
+
+
+//==============================================================================
+//  Media Queries
+//==============================================================================
+@media screen and (min-width: 650px)
+  .resourceModal
+    width 630px
+    left 50%
+    margin-left -315px
+
+@media screen and (min-width: 960px)
+  .resourceModal
+    width 940px
+    top 150px
+    left 50%
+    margin-left -(940 / 2)px
+    .resource
+      position relative
+      clearfix()
+
+  .resource-media
+    width 620px
+    float left
+
+  .resource-desc
+    width 320px
+    float right
+
+    .resourceUploaded
+      position absolute
+      bottom 10px
+      width 320px
+
+
+// .resource-video-wrapper
+//   background #1b1f23
+//   clearfix()
+
+// .resource-video
+//   max-width 640px
+//   margin 0 auto
+//   position relative
+
+
+// .resource-vote
+//   padding 10px 0px
+//   text-align right
+//   span
+//     font-size 13px
+//     color #f7f7f7
+//     font-family $secondaryTypeface
+//     font-style italic
+//     display inline
+//     margin-bottom 10px
+//     margin-right 10px
+//   .btn
+//     background #557cd2
+//     color #f7f7f7
+//     font-size 14px
+//     font-weight 600
+//     border none
+//     font-style normal
+//     border-radius 5px
+//     font-family $secondaryTypeface
+
+// @media screen and (max-width: 650px)
+//   .resource-vote
+//     margin-right 10px
+
+// @media screen and (min-width: 960px)
+//   .resource-vote
+//     text-align left
+//     position absolute
+//     bottom 10px
+//     right 0px
+//     transform translate3d(100%, 0, 0)
+//     padding 0px 0px 0px 10px
+//     span
+//       display block
+//       margin-right 0px
+
+
+// .resource-title
+//   text-align left
+//   font-size 39px
+//   margin 25px 0px 10px 0px
+
+// .resource-desc
+//   margin 15px 0px 15px 0px

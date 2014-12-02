@@ -1,27 +1,24 @@
-article.resource
-  .resource-video-wrapper
-    .resource-video
+.resourceModal
+  .resource
+    .resource-media
       .resource-embed
-        //- div(ng-bind-html="<iframe src='https://www.youtube.com/embed/Bu6SE5TYrCM' frameborder='0' allowfullscreen='allowfullscreen'>")
         iframe(width="560", height="315", ng-src="{{video}}", frameborder="0", allowfullscreen)
-      .resource-vote
-        span {{resource.recommendations.amount}} votes
-        a.btn Recommend This
 
-  .content
-    h1(ng-bind="resource.title").resource-title
-    span(ng-show="resource.type === 'book'").label.label--book Book
-    span(ng-show="resource.type === 'audiobook'").label.label--audiobook Audiobook
-    span(ng-show="resource.type === 'documentary'").label.label--documentary Documentary
-    span(ng-show="resource.type === 'talk'").label.label--talk Talk
-    span(ng-show="resource.type === 'video'").label.label--video Short Video
-    span(ng-show="resource.type === 'lecture'").label.label--lecture Lecture
-    //- .resource-desc
-    //-   p Experience the extraordinary…in our planet’s own backyard. Wonders explores some of the most amazing features of our very own solar system – how the forces of nature carved out beauty and order from the chaos of space; how our home planet doesn’t sit in magnificent isolation but is intimately connected with the rest of the solar system; and how these connections have created the haven we call Earth. Using the latest scientific knowledge and breathtaking images beamed back from the fleet of probes, rovers and telescopes currently in space, this gorgeous imagery will is paired with some of the most spectacular, extreme locations on Earth help to reveal wonders never thought possible.
+    .resource-desc
+      h2(ng-bind="resource.title").resource-title
+      span(ng-show="resource.type === 'book'").resource-label.label.label--book Book
+      span(ng-show="resource.type === 'audiobook'").resource-label.label.label--audiobook Audiobook
+      span(ng-show="resource.type === 'documentary'").resource-label.label.label--documentary Documentary
+      span(ng-show="resource.type === 'talk'").resource-label.label.label--talk Talk
+      span(ng-show="resource.type === 'video'").resource-label.label.label--video Short Video
+      span(ng-show="resource.type === 'lecture'").resource-label.label.label--lecture Lecture
 
-    .resourcePreview-uploaded
-      .resourcePreview-uploaded-img
-        img(ng-src="http://api.loreof.co/{{resource.uploaded.avatar}}")
-      .resourcePreview-uploaded-user
-        .resourcePreview-uploaded-user-title Uploaded by
-        span(ng-bind="resource.uploaded.name").resourcePreview-uploaded-user-username
+      a(ng-href="{{resource.href}}").resource-external.btn.btn--lrg Watch Full Documentary
+
+      .resourceUploaded
+        .resourceUploaded-img
+          img(ng-src="http://api.loreof.co/{{resource.uploaded.avatar}}")
+        .resourceUploaded-user
+          .resourceUploaded-user-title Uploaded by
+          span(ng-bind="resource.uploaded.name").resourceUploaded-user-username
+        .resourceUploaded-votes {{resource.recommendations.amount}} votes

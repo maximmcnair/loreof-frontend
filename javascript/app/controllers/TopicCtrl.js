@@ -5,8 +5,8 @@ function toTitleCase(str){
 }
 
 loreOfControllers
-  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$stateParams', '$location', '$metaService',
-  function($scope, $resourceService, $http, $stateParams, $location, $metaService) {
+  .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$stateParams', '$location', '$metaService', '$modal',
+  function($scope, $resourceService, $http, $stateParams, $location, $metaService, $modal) {
     console.log( $location.search()['tags'])
     /*
      * Tags
@@ -15,7 +15,7 @@ loreOfControllers
       , tagsFormatted = []
 
     angular.forEach(tagsRaw, function (tag) {
-      tagsFormatted.push( toTitleCase(tag.replace(/-/g, ' ')) )
+      if(tag) tagsFormatted.push( toTitleCase(tag.replace(/-/g, ' ')) )
     })
 
     $scope.topic =
@@ -61,5 +61,21 @@ loreOfControllers
     //   .error(function(data, status, headers, config) {
     //     console.log('error', data, status)
     //   })
+
+
+    /*
+     * Resource Modals
+     */
+    $scope.openResourceModal = function (id) {
+      $modal.open(
+        { templateUrl: 'partials/resource.html'
+        , resolve: {
+            resourceId: function() { return id }
+          }
+        , controller: 'ResourceCtrl'
+        , backdrop: true
+        })
+    }
+
 
   }])

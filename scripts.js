@@ -6,6 +6,7 @@ module.exports =
     , __dirname + '/javascript/lib/angular-animate.js'
     , __dirname + '/javascript/lib/angular-sanitize.js'
     , __dirname + '/javascript/lib/angular-seo.js'
+    , __dirname + '/javascript/lib/ui-bootstrap-custom-0.12.0.js'
     ]
   , fixtures:
     // Fixtures
