@@ -15,55 +15,82 @@ var apiURl = 'http://localhost:4002'
 app.config(function($stateProvider, $sceDelegateProvider, $locationProvider, $urlRouterProvider) {
   // use the HTML5 History API
   $locationProvider.html5Mode(true)
-  $urlRouterProvider.otherwise('/')
 
   $stateProvider
-    .state('app',
-      { url: ''
-      , abstract: true
-      , sticky: true
-      , views:
-        { app:
-          { templateUrl: 'partials/app.html'
-          }
-        }
-      })
-    .state('app.home',
+    .state('home',
       { url: '/'
       , templateUrl: 'partials/home.html'
       , controller: 'HomeCtrl'
+      , modalMaster: true
       })
-    .state('app.topic',
+    .state('topic',
       { url: '/topic/:topic'
       , templateUrl: 'partials/topic.html'
       , controller: 'TopicCtrl'
+      , modalMaster: true
       })
     .state('resource',
       { url: '/resource/:id'
-      , onEnter: ['$stateParams', '$state', '$modal', '$resourceService',
-        function($stateParams, $state, $modal, $resourceService) {
-          $modal.open({
-            templateUrl: 'partials/resource.html'
-          , resolve: {
-              resourceId: function() { return $stateParams.id }
-            }
-          , controller: 'ResourceCtrl'
-          , backdrop: true
-          })
-        }]
+      , templateUrl: 'partials/resource.html'
+      , controller: 'ResourceCtrl'
+      , modalSlave: true
       })
 
+  $urlRouterProvider.otherwise('/')
+
+  // Enable handling of url changes ourselves
+  $urlRouterProvider.deferIntercept()
+
+  // Allow youtube/vimeo content
   $sceDelegateProvider.resourceUrlWhitelist(
     [ 'self'
     , 'https://www.youtube.com/**'
     , 'http://player.vimeo.com/**'
     ])
 })
-app.run(['$rootScope', '$location', function ($rootScope, $location) {
-  $rootScope.count = 0
-  $rootScope.$on('$stateChangeStart', function (event, next) {
-    console.log($rootScope.count)
-    $rootScope.count++
+app.run(['$rootScope', '$state', '$modal', '$location', '$urlRouter', '$timeout',
+  function ($rootScope, $state, $modal, $location, $urlRouter, $timeout) {
+
+  var entering
+    , modalInstance
+    , toStatePrevented
+
+  modalInstance = toStatePrevented = null
+  entering = false
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+    if (fromState.modalMaster && toState.modalSlave) {
+      event.preventDefault()
+      $state.current.inModal = toState
+      entering = true
+      $timeout(function() {
+        return $location.path($state.href(toState, toParams), false)
+      }, 0)
+      // toState.resolve =
+      //   { resourceId: function () {
+      //       return toParams.id
+      //     }
+      //   }
+      modalInstance = $modal.open(toState)
+      return modalInstance.result["catch"](function() {
+        entering = false
+        $state.current.inModal = null
+        $state.go(fromState)
+        return modalInstance = toStatePrevented = null
+      })
+    }
   })
+
+  return $rootScope.$on('$locationChangeSuccess', function(event, toUrl, fromUrl) {
+    event.preventDefault()
+    if ($state.current.inModal == null) {
+      return $urlRouter.sync()
+    } else if (!entering && (modalInstance != null)) {
+      return modalInstance.dismiss()
+    } else {
+      return entering = false
+    }
+  })
+
 }])
 var loreOfControllers = angular.module('loreof.controllers', [])
