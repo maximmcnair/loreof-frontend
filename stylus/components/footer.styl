@@ -1,0 +1,55 @@
+.footer
+  width 100%
+  padding 20px 0px 15px 0px
+  background #313131
+  min-height 150px
+  clearfix()
+  a
+    font-family $secondaryTypeface
+    color #EBEDEA
+    font-size 13px
+    text-transform uppercase
+    display block
+    margin-bottom 6px
+
+.footer__col__title
+  font-family $secondaryTypeface
+  color #ebebeb
+  font-size 13px
+  text-transform uppercase
+  display block
+  margin-bottom 15px
+
+@media screen and (min-width: 500px) and (max-width: 750px)
+  .footer__pages
+  .footer__social
+  .footer__mixpanel
+    width responsive(300, 620px)
+    float left
+    margin-right responsive(20, 620px)
+    &:nth-of-type(2n)
+      margin-right 0%
+
+@media screen and (min-width: 750px)
+  .footer__pages
+  .footer__social
+  .footer__mixpanel
+    width responsive(300, 940)
+    float left
+    margin-right responsive(20, 940)
+    &:nth-of-type(3n)
+      margin-right 0%
+
+
+.footer--bottom
+  clearfix()
+  width 100%
+  padding 20px 0px 15px 0px
+  background #2a2a2a
+
+.footer__copyright
+  color #B2B0B1
+  font-family $secondaryTypeface
+  font-size 13px
+  text-transform uppercase
+  display block
