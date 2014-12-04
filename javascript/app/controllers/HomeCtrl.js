@@ -32,7 +32,7 @@ loreOfControllers
     $scope.tagsVisible = false
 
     $scope.showTags = function (topic) {
-      $scope.topic = topic.slug
+      $scope.topic = topic
       $scope.tags = topic.tags
 
       $scope.topicsVisible = false
