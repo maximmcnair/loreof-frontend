@@ -7,7 +7,6 @@ function toTitleCase(str){
 loreOfControllers
   .controller('TopicCtrl', ['$scope', '$resourceService', '$http', '$stateParams', '$location', '$metaService', '$modal',
   function($scope, $resourceService, $http, $stateParams, $location, $metaService, $modal) {
-    console.log( $location.search()['tags'])
     /*
      * Tags
      */
@@ -34,10 +33,9 @@ loreOfControllers
 
     var query =
       { topicSlug: $stateParams.topic
-      , tags: $scope.topic.tags
       }
 
-    // console.log( $location.search()['tags'] )
+    if(tagsRaw[0] !== undefined) query.tags = tagsRaw
 
     $resourceService.getResources(query).then(function(data) {
       $scope.resources = data

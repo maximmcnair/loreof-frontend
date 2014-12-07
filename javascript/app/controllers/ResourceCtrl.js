@@ -14,19 +14,19 @@ loreOfControllers
       $metaService.setMeta('facebookTitle', $scope.resource.title + ' | Lore Of')
       $metaService.setMeta('facebookUrl', $location.host() + $location.path())
 
-      if($scope.resource.trailer){
-        if($mediaService.isValidYoutube($scope.resource.trailer)){
-          $scope.video = $mediaService.getYoutubeSrc($scope.resource.trailer)
-        } else if ($mediaService.isValidVimeo($scope.resource.trailer)) {
-          $scope.video = $mediaService.getVimeoSrc($scope.resource.trailer)
+      if($scope.resource.media.trailer){
+        if($mediaService.isValidYoutube($scope.resource.media.trailer)){
+          $scope.video = $mediaService.getYoutubeSrc($scope.resource.media.trailer)
+        } else if ($mediaService.isValidVimeo($scope.resource.media.trailer)) {
+          $scope.video = $mediaService.getVimeoSrc($scope.resource.media.trailer)
         } else {
           $scope.video = ''
         }
       } else {
-        if($mediaService.isValidYoutube($scope.resource.video)){
-          $scope.video = $mediaService.getYoutubeSrc($scope.resource.video)
-        } else if ($mediaService.isValidVimeo($scope.resource.video)) {
-          $scope.video = $mediaService.getVimeoSrc($scope.resource.video)
+        if($mediaService.isValidYoutube($scope.resource.media.video)){
+          $scope.video = $mediaService.getYoutubeSrc($scope.resource.media.video)
+        } else if ($mediaService.isValidVimeo($scope.resource.media.video)) {
+          $scope.video = $mediaService.getVimeoSrc($scope.resource.media.video)
         } else {
           $scope.video = ''
         }
