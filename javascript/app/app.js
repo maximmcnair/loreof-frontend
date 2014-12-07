@@ -36,7 +36,10 @@ app.config(function($stateProvider, $sceDelegateProvider, $locationProvider, $ur
       , controllerAs: 'ctrl'
       , resolve:
         { resourceId: function($stateParams) {
-            return $stateParams.id;
+            return $stateParams.id
+          }
+        , isModal: function($stateParams) {
+            return $stateParams.isModal
           }
         }
       })
@@ -72,6 +75,7 @@ app.run(['$rootScope', '$state', '$modal', '$location', '$urlRouter', '$timeout'
         return $location.path($state.href(toState, toParams), false)
       }, 0)
       _.assign($stateParams, toParams)
+      _.extend($stateParams, {isModal: true})
       modalInstance = $modal.open(toState)
       return modalInstance.result['catch'](function() {
         entering = false

@@ -1,6 +1,8 @@
 loreOfControllers
-  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', 'resourceId',
-  function($scope, $resourceService, $mediaService, resourceId) {
+  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', 'resourceId', 'isModal',
+  function($scope, $resourceService, $mediaService, resourceId, isModal) {
+    $scope.isModal = isModal
+
     $resourceService.getResource(resourceId).then(function(data) {
       $scope.resource = data
 

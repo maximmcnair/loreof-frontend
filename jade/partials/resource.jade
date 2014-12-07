@@ -1,5 +1,5 @@
-.resourceModal
-  .resource
+div(ng-class="{'resourceModal': isModal, 'resources': !isModal}")
+  div(ng-class="{'content': !isModal}").resource
     .resource-media
       .resource-embed
         iframe(width="560", height="315", ng-src="{{video}}", frameborder="0", allowfullscreen)
