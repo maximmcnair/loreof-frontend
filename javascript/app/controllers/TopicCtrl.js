@@ -28,7 +28,9 @@ loreOfControllers
      * Meta Data
      */
     $metaService.setMeta('pageTitle', $scope.topic.title + ' | Lore Of')
+    $metaService.setMeta('twitterTitle', $scope.topic.title + ' | Lore Of')
     $metaService.setMeta('facebookTitle', $scope.topic.title + ' | Lore Of')
+    $metaService.setMeta('facebookUrl', 'Home | Lore Of')
 
     var query =
       { topicSlug: $stateParams.topic

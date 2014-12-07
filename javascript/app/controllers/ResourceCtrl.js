@@ -1,10 +1,18 @@
 loreOfControllers
-  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', 'resourceId', 'isModal',
-  function($scope, $resourceService, $mediaService, resourceId, isModal) {
+  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', '$metaService', '$location', 'resourceId', 'isModal',
+  function($scope, $resourceService, $mediaService, $metaService, $location, resourceId, isModal) {
     $scope.isModal = isModal
 
     $resourceService.getResource(resourceId).then(function(data) {
       $scope.resource = data
+
+      /*
+       * Meta Data
+       */
+      $metaService.setMeta('pageTitle', $scope.resource.title + ' | Lore Of')
+      $metaService.setMeta('twitterTitle', $scope.resource.title + ' | Lore Of')
+      $metaService.setMeta('facebookTitle', $scope.resource.title + ' | Lore Of')
+      $metaService.setMeta('facebookUrl', $location.host() + $location.path())
 
       if($scope.resource.trailer){
         if($mediaService.isValidYoutube($scope.resource.trailer)){

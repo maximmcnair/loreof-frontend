@@ -5,7 +5,8 @@ loreOfControllers
      * Meta Data
      */
     $metaService.setMeta('pageTitle', 'Home | Lore Of')
-
+    $metaService.setMeta('twitterTitle', 'Home | Lore Of')
+    $metaService.setMeta('facebookTitle', 'Home | Lore Of')
 
     /*
      * Get topics

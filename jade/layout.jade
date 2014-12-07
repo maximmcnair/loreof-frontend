@@ -5,7 +5,6 @@ html(ng-app="loreof")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0")
 
     link(rel='stylesheet', href='/css/style.css')
-    //- link(href="/css/font-awesome.min.css", rel="stylesheet")
     link(rel="shortcut icon", href="/images/favicon.ico?v=2")
 
     script(type="text/javascript", src="//use.typekit.net/nsy8wom.js")
@@ -22,18 +21,18 @@ html(ng-app="loreof")
     meta(name="twitter:card", value="summary")
     meta(name="twitter:site", value="@loreofHQ")
     meta(name="twitter:title", ng-content="{{ metaData.getMeta('twitterTitle') }}")
-    meta(name="twitter:description", ng-content="{{ metaData.getMeta('twitterDescription') }}")
-    meta(name="twitter:image", ng-content="{{ metaData.getMeta('twitterImage') }}")
+    //- meta(name="twitter:description", ng-content="{{ metaData.getMeta('twitterDescription') }}")
+    //- meta(name="twitter:image", ng-content="{{ metaData.getMeta('twitterImage') }}")
 
     <!-- Open Graph / Facebook Meta -->
     meta(property="og:type", content="website")
     meta(property="og:title", ng-content="{{ metaData.getMeta('facebookTitle') }}")
-    meta(property="og:description", ng-content="{{ metaData.getMeta('facebookDescription') }}")
     meta(property="og:url", ng-content="{{ metaData.getMeta('facebookUrl') }}")
-    meta(property="og:image", ng-content="{{ metaData.getMeta('facebookImage') }}")
+    //- meta(property="og:description", ng-content="{{ metaData.getMeta('facebookDescription') }}")
+    //- meta(property="og:image", ng-content="{{ metaData.getMeta('facebookImage') }}")
 
     <!-- Google Meta -->
-    meta(name="description", content="{{ metaData.getMeta('pageDescription') }}")
+    //- meta(name="description", content="{{ metaData.getMeta('pageDescription') }}")
 
     base(href="/")
   body
