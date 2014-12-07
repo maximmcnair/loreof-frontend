@@ -36,6 +36,12 @@ loreOfControllers
       // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
       // we are finished with this controller. 
       $scope.htmlReady()
+
+      if($scope.resource.purchase.amazon) $scope.resource.href = $scope.resource.purchase.amazon
+      if($scope.resource.purchase.itunes) $scope.resource.href = $scope.resource.purchase.itunes
+      if($scope.resource.purchase.youtube) $scope.resource.href = $scope.resource.purchase.youtube
+      if($scope.resource.purchase.vimeo) $scope.resource.href = $scope.resource.purchase.vimeo
+
     })
 
   }])

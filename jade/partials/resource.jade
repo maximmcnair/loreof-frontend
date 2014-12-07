@@ -13,7 +13,29 @@ div(ng-class="{'resourceModal': isModal, 'resources': !isModal}")
       span(ng-show="resource.type === 'video'").resource-label.label.label--video Short Video
       span(ng-show="resource.type === 'lecture'").resource-label.label.label--lecture Lecture
 
-      a(ng-href="{{resource.href}}").resource-external.btn.btn--lrg Watch Full Documentary
+      a(ng-href="{{resource.href}}", target="_blank").resource-external.btn.btn--lrg Watch Full Documentary
+
+      //- span(on-toggle="toggled(open)", ng-if="resource.purchase").dropdown
+      //-   a.btn.dropdown-toggle
+      //-     | View on…
+      //-     i.fa.fa-chevron-down
+      //-   ul.dropdown-menu
+      //-     li(ng-if="resource.purchase.amazon")
+      //-       a(href="{{resource.purchase.amazon}}", target="_blank")
+      //-         //- i.fa.fa-amazon
+      //-         | Amazon
+      //-     li(ng-if="resource.purchase.itunes")
+      //-       a(href="{{resource.purchase.itunes}}", target="_blank")
+      //-         //- i.fa.fa-apple
+      //-         | iTunes
+      //-     li(ng-if="resource.purchase.youtube")
+      //-       a(href="{{resource.purchase.youtube}}", target="_blank")
+      //-         //- i.fa.fa-youtube
+      //-         | YouTube
+      //-     li(ng-if="resource.purchase.vimeo")
+      //-       a(href="{{resource.purchase.vimeo}}", target="_blank")
+      //-         //- i.fa.fa-fa-vimeo-square
+      //-         | Vimeo
 
       .resourceUploaded
         .resourceUploaded-img
