@@ -13,7 +13,8 @@ section(ng-style="getImage()").topicSelect
         a(ng-repeat="topic in topics", ng-bind="topic.title", ng-click="showTags(topic)").btn
 
       div(ng-show="tagsVisible")
-        h3 Now how do you want to filter {{topic.title}}
+        h3 Do you want to filter {{topic.title}}
+        a(ng-href="/topic/{{topic.slug}}").btn Show All
         a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic.slug}}?tags={{tag.slug}}").btn
         //- a(ng-repeat="tag in tags", ng-bind="tag.title", ng-href="/topic/{{topic}}").btn
         a(ng-click="showTopics()").topicSelect-backToTopics Back to Topics

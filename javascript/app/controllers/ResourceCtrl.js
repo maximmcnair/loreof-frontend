@@ -1,8 +1,7 @@
 loreOfControllers
-  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', '$state', '$timeout', '$stateParams',
-  function($scope, $resourceService, $mediaService, $state, $timeout, $stateParams) {
-
-    $resourceService.getResource($stateParams.id).then(function(data) {
+  .controller('ResourceCtrl', ['$scope', '$resourceService', '$mediaService', 'resourceId',
+  function($scope, $resourceService, $mediaService, resourceId) {
+    $resourceService.getResource(resourceId).then(function(data) {
       $scope.resource = data
 
       if($scope.resource.trailer){

@@ -3,7 +3,6 @@
 var apiURl = 'http://localhost:4002'
   , app = angular.module('loreof',
     [ 'ui.router'
-    , 'ct.ui.router.extras'
     , 'ui.bootstrap'
     , 'ngAnimate'
     , 'loreof.controllers'
@@ -34,6 +33,13 @@ app.config(function($stateProvider, $sceDelegateProvider, $locationProvider, $ur
       , templateUrl: 'partials/resource.html'
       , controller: 'ResourceCtrl'
       , modalSlave: true
+      , controllerAs: 'ctrl'
+      , resolve:
+        { resourceId: function($stateParams) {
+            console.log('$stateParams', $stateParams)
+            return $stateParams.id;
+          }
+        }
       })
 
   $urlRouterProvider.otherwise('/')
@@ -48,8 +54,8 @@ app.config(function($stateProvider, $sceDelegateProvider, $locationProvider, $ur
     , 'http://player.vimeo.com/**'
     ])
 })
-app.run(['$rootScope', '$state', '$modal', '$location', '$urlRouter', '$timeout',
-  function ($rootScope, $state, $modal, $location, $urlRouter, $timeout) {
+app.run(['$rootScope', '$state', '$modal', '$location', '$urlRouter', '$timeout', '$stateParams',
+  function ($rootScope, $state, $modal, $location, $urlRouter, $timeout, $stateParams) {
 
   var entering
     , modalInstance
@@ -66,11 +72,7 @@ app.run(['$rootScope', '$state', '$modal', '$location', '$urlRouter', '$timeout'
       $timeout(function() {
         return $location.path($state.href(toState, toParams), false)
       }, 0)
-      // toState.resolve =
-      //   { resourceId: function () {
-      //       return toParams.id
-      //     }
-      //   }
+      _.assign($stateParams, toParams)
       modalInstance = $modal.open(toState)
       return modalInstance.result["catch"](function() {
         entering = false
